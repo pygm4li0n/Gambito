@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>GAMBITO LÁSER — GRABADO CNC · WHITE-HOT EDITION</title>
+<meta name="description" content="GAMBITO LÁSER — Grabado láser CNC, tarjetas de colección y trabajos personalizados. Venado Tuerto, Santa Fe.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2307080b'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial' font-size='36' font-weight='900' text-anchor='middle' fill='%23ffffff'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="scroll-bar" id="scrollBar" aria-hidden="true"></div>
+<canvas class="mm-fx-particles" id="mm-fx-particles" aria-hidden="true"></canvas>
+<div class="mm-cursor" id="mm-cursor" aria-hidden="true"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker"><span class="live"></span>Artista · <b>Damián / Grabado Láser</b></div>
+
+    <h1 class="logo">
+      <span class="logo-word">GAMBITO</span>
+      <span class="logo-sub">LÁSER</span>
+    </h1>
+
+    <p class="hero-tags">Tarjetas de colección <i>·</i> Trabajos personalizados <i>·</i> Grabado láser CNC</p>
+
+    <p class="hero-lead">
+      <strong>GRABAMOS</strong> con luz: el láser quema el trazo y lo deja marcado
+      para siempre en el metal, la madera o el cuero. Piezas de colección, placas
+      y encargos personalizados, hechos uno por uno en <em>Venado Tuerto</em>.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#cnc" class="btn-primary">Ver grabado en vivo</a>
+      <a href="#trabajos" class="btn-ghost">Ver piezas</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat"><b data-count="0.2" data-dec="1" data-prefix="±">±0.2</b><span>mm de tolerancia</span></div>
+      <div class="stat"><b data-count="5">5</b><span>materiales</span></div>
+      <div class="stat"><b data-count="100" data-suffix="%">100%</b><span>pieza por pieza</span></div>
+    </div>
+
+    <div class="hero-flow">
+      <p class="flow-eyebrow">Del vector a la pieza marcada</p>
+      <div class="flow-grid">
+        <div class="flow-step">
+          <div class="flow-head"><span class="flow-num">01</span><span class="flow-label">Boceto</span></div>
+          <div class="flow-media"><img id="flowImg1" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Boceto del diseño" loading="lazy" decoding="async"></div>
+          <p class="flow-desc">Vectorizamos la idea, la tipografía y el trazo exacto.</p>
+        </div>
+        <div class="flow-connector"><span></span><span></span><span></span></div>
+        <div class="flow-step">
+          <div class="flow-head"><span class="flow-num">02</span><span class="flow-label">Grabado</span></div>
+          <div class="flow-media"><img id="flowImg2" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Grabado láser" loading="lazy" decoding="async"></div>
+          <p class="flow-desc">El haz quema el material con precisión de décimas de milímetro.</p>
+        </div>
+        <div class="flow-connector"><span></span><span></span><span></span></div>
+        <div class="flow-step">
+          <div class="flow-head"><span class="flow-num">03</span><span class="flow-label">Acabado</span></div>
+          <div class="flow-media"><img id="flowImg3" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Acabado final" loading="lazy" decoding="async"></div>
+          <p class="flow-desc">Pulido, anodizado o sellado. La pieza sale lista para durar.</p>
+        </div>
+        <div class="flow-connector"><span></span><span></span><span></span></div>
+        <a class="flow-step flow-step-placeholder" href="https://wa.me/543462415932?text=Hola%20GAMBITO%20L%C3%81SER%2C%20quiero%20encargar%20una%20pieza." target="_blank" rel="noopener noreferrer" aria-label="Encargá tu pieza">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5z"/></svg>
+          <span>Encargá tu pieza</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-content">
+      <span>Grabado láser CNC</span><span>Tarjetas de colección</span><span>Trabajos personalizados</span><span>Acero · Madera · Cuero</span><span>Venado Tuerto · Santa Fe</span>
+    </div>
+    <div class="marquee-content">
+      <span>Grabado láser CNC</span><span>Tarjetas de colección</span><span>Trabajos personalizados</span><span>Acero · Madera · Cuero</span><span>Venado Tuerto · Santa Fe</span>
+    </div>
+  </div>
+</div>
+
+<!-- LIVE ENGRAVING STAGE -->
+<section id="cnc">
+  <div class="section-head reveal">
+    <div>
+      <p class="eyebrow">// Taller CNC · en vivo</p>
+      <h2 class="section-title">LA MANO <em>máquina</em></h2>
+    </div>
+    <p class="section-desc">Un solo haz. Una pasada de relleno, una de contorno. Elegí el material y mirá cómo reacciona.</p>
+  </div>
+
+  <div class="mat-switch reveal" role="group" aria-label="Material de la simulación">
+    <button type="button" class="mat-btn active" data-mat="steel">Acero</button>
+    <button type="button" class="mat-btn" data-mat="alu">Aluminio anodizado</button>
+    <button type="button" class="mat-btn" data-mat="wood">Madera</button>
+    <button type="button" class="mat-btn" data-mat="leather">Cuero</button>
+  </div>
+
+  <div class="cnc-stage reveal">
+    <canvas id="engraveCanvas" role="img" aria-label="Simulación en vivo de grabado láser sobre una tarjeta"></canvas>
+    <span class="cnc-corner tl">X <b id="hudX">000.00</b><br>Y <b id="hudY">000.00</b></span>
+    <span class="cnc-corner tr">VEL <b id="hudVel">0</b> mm/s<br>POT <b id="hudPow">65</b> %</span>
+    <span class="cnc-corner bl">MAT <b id="hudMat">ACERO</b><br>PAS <b id="hudPass">01/02</b></span>
+    <span class="cnc-corner br"><b id="hudProg">0</b> %<br>GAMBITO · <b>2026</b></span>
+    <div class="cnc-progress"><i id="progFill"></i></div>
+  </div>
+  <p class="cnc-note reveal">Simulación ilustrativa · 86 × 54 mm · tolerancia ±0,2 mm</p>
+</section>
+
+<!-- CATÁLOGO -->
+<section id="trabajos">
+  <div class="section-head reveal">
+    <div>
+      <p class="eyebrow">// Catálogo</p>
+      <h2 class="section-title">PIEZAS <em>2026</em></h2>
+    </div>
+    <p class="section-desc">Series activas del taller. Elegí el material y tocá una pieza para ver el detalle.</p>
+  </div>
+  <div class="works-grid" id="worksGrid"></div>
+</section>
+
+<!-- CÓMO ENCARGAR -->
+<section id="pedido">
+  <div class="section-head reveal">
+    <div>
+      <p class="eyebrow">// Encargo</p>
+      <h2 class="section-title">ASÍ SE ENCARGA <em>simple</em></h2>
+    </div>
+    <p class="section-desc">Sin formularios eternos. Elegís, escribís y coordinamos todo por chat.</p>
+  </div>
+  <div class="steps reveal">
+    <div class="step"><span class="step-num">01</span><h3>Elegí la pieza</h3><p>Abrí la ficha, revisá el material y el detalle del grabado antes de escribirnos.</p></div>
+    <div class="step"><span class="step-num">02</span><h3>Mandá tu idea</h3><p>El botón de WhatsApp abre el chat con el pedido redactado. Si es personalizado, mandá tu logo o diseño.</p></div>
+    <div class="step"><span class="step-num">03</span><h3>Coordinamos</h3><p>Aprobás la prueba digital, pagás por transferencia o efectivo y definimos envío o retiro.</p></div>
+  </div>
+  <div class="step-note reveal">
+    <strong>Tip</strong>
+    <span>Los archivos vectoriales (SVG, PDF, AI) salen perfectos. Si tenés una foto, también la podemos vectorizar.</span>
+  </div>
+</section>
+
+<!-- MATERIALES -->
+<section id="materiales">
+  <div class="section-head reveal">
+    <div>
+      <p class="eyebrow">// Materiales</p>
+      <h2 class="section-title">MATERIALES <em>mm</em></h2>
+    </div>
+    <p class="section-desc">El grabado es permanente: no se borra, no se despega, no se cae.</p>
+  </div>
+  <div class="size-table-wrap reveal">
+    <table>
+      <thead><tr><th>Material</th><th>Espesor</th><th>Acabado</th></tr></thead>
+      <tbody>
+        <tr><td>Acero inoxidable</td><td>1,5 mm</td><td>Pulido espejo / mate</td></tr>
+        <tr><td>Aluminio</td><td>1,2 mm</td><td>Anodizado</td></tr>
+        <tr><td>Madera</td><td>3 mm</td><td>Natural / laqueado</td></tr>
+        <tr><td>Cuero</td><td>2 mm</td><td>Grabado profundo</td></tr>
+        <tr><td>Acrílico</td><td>3 mm</td><td>Cristal / esmerilado</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="size-note reveal">Tolerancia de ±0,2 mm. Formatos de tarjeta disponibles: 8,6 × 5,4 cm (estándar) y 6,3 × 8,8 cm (jumbo).</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span>© <span id="year">2026</span> GAMBITO LÁSER · Venado Tuerto · Santa Fe</span>
+      <button type="button" class="admin-trigger" id="adminTrigger" aria-label="Abrir panel de administración" title="Panel"><span class="admin-dot"></span></button>
+    </div>
+    <span>Damián / Grabado Láser</span>
+  </div>
+</footer>
+
+<!-- FLOATING SOCIAL -->
+<div class="floating-social">
+  <a class="social-icon wa" href="https://wa.me/543462415932" target="_blank" rel="noopener noreferrer" aria-label="Chatear por WhatsApp" title="WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+  </a>
+  <a class="social-icon ig" href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Seguinos en Instagram" title="Instagram">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+  </a>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Vista de la pieza">
+  <div class="lightbox-inner">
+    <button type="button" class="lightbox-close" id="lbClose" aria-label="Cerrar">✕</button>
+    <div class="lightbox-top"><span class="work-tag" id="lbTag"></span><h3 id="lbTitle"></h3></div>
+    <div class="lightbox-img"><img id="lbImg" alt=""></div>
+    <div class="lightbox-bottom">
+      <p id="lbPrice"></p><p id="lbVar"></p><p id="lbDesc"></p>
+      <a id="lbWa" class="lb-wa-btn" href="#" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN -->
+<div id="adminOverlay">
+  <div class="login-card" id="loginCard">
+    <h3>Acceso</h3>
+    <p>Panel privado GAMBITO LÁSER</p>
+    <div class="login-error" id="loginError" role="status" aria-live="polite"></div>
+    <form id="loginForm">
+      <div class="field"><label for="loginUser">Usuario</label><input type="text" id="loginUser" autocomplete="username" spellcheck="false"></div>
+      <div class="field"><label for="loginPass">Contraseña</label><input type="password" id="loginPass" autocomplete="current-password"></div>
+      <div class="form-actions">
+        <button type="submit" class="btn-save">Entrar</button>
+        <button type="button" id="loginCancel" class="btn-cancel">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="admin-panel" id="adminPanel" style="display:none">
+    <div class="admin-head">
+      <div><h3>Administración</h3><small>Precio base, imágenes del proceso, piezas del catálogo.</small></div>
+      <div class="admin-head-actions">
+        <button type="button" id="logoutBtn" class="btn-cancel">Salir</button>
+        <button type="button" id="closePanelBtn" class="btn-save">Cerrar</button>
+      </div>
+    </div>
+    <div class="admin-status" id="adminStatus" role="status" aria-live="polite"></div>
+    <div class="admin-grid">
+      <div class="admin-form-card">
+        <div class="admin-price-box">
+          <label for="priceInput">Precio base (ARS)</label>
+          <div class="admin-price-row">
+            <input type="number" id="priceInput" min="0" step="500" inputmode="numeric">
+            <button type="button" id="savePriceBtn" class="btn-save">Guardar</button>
+          </div>
+        </div>
+        <div class="admin-flow-box">
+          <label>Imágenes del proceso</label>
+          <div class="admin-flow-grid">
+            <label class="admin-flow-slot"><div class="admin-flow-thumb"><img id="flowThumbImg1" alt="Boceto" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></div><span class="admin-flow-label">Boceto</span><input type="file" id="flowFile1" accept="image/*" hidden></label>
+            <label class="admin-flow-slot"><div class="admin-flow-thumb"><img id="flowThumbImg2" alt="Grabado" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></div><span class="admin-flow-label">Grabado</span><input type="file" id="flowFile2" accept="image/*" hidden></label>
+            <label class="admin-flow-slot"><div class="admin-flow-thumb"><img id="flowThumbImg3" alt="Acabado" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></div><span class="admin-flow-label">Acabado</span><input type="file" id="flowFile3" accept="image/*" hidden></label>
+          </div>
+        </div>
+        <h4 id="formTitle">Agregar pieza</h4>
+        <form id="workForm" novalidate>
+          <div class="field">
+            <input type="file" id="wFile" accept="image/*" hidden>
+            <label for="wFile" class="upload-btn" id="wUploadBtn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l4.6 4.6-1.42 1.42L13 6.84V17h-2V6.84L8.82 9.02 7.4 7.6 12 3zM5 19h14v2H5z"/></svg>
+              <span id="wUploadText">Subir imagen</span>
+            </label>
+            <small id="wFileStatus">JPG, PNG o WebP. Se ajusta automáticamente.</small>
+            <div class="preview" id="wPreview"><img id="wPreviewImg" alt="Previsualización"></div>
+          </div>
+          <div class="field"><label for="wTitle">Título</label><input type="text" id="wTitle" maxlength="60" required></div>
+          <div class="field"><label for="wDesc">Descripción</label><input type="text" id="wDesc" maxlength="120"></div>
+          <div class="field"><label for="wTag">Etiqueta</label><input type="text" id="wTag" maxlength="16"></div>
+          <div class="form-actions">
+            <button type="submit" class="btn-save" id="saveBtn">Guardar</button>
+            <button type="button" id="cancelEditBtn" class="btn-cancel" style="display:none">Cancelar edición</button>
+          </div>
+        </form>
+      </div>
+      <div><div class="admin-list" id="adminList"></div></div>
+    </div>
+  </div>
+</div>
+
+<div id="confirmOverlay" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+  <div class="confirm-card">
+    <div class="confirm-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6l1 2h4v2H4V5h4l1-2zm-3 6h12l-1 12H7L6 9z"/></svg></div>
+    <h3 class="confirm-title" id="confirmTitle">Eliminar</h3>
+    <p class="confirm-message" id="confirmMessage"></p>
+    <div class="confirm-actions">
+      <button type="button" id="confirmCancelBtn" class="confirm-btn confirm-btn-cancel">Cancelar</button>
+      <button type="button" id="confirmDeleteBtn" class="confirm-btn confirm-btn-danger">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+</body>
+</html>
