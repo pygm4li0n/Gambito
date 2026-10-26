@@ -1000,9 +1000,21 @@
         }
         .hero-laser { width: min(88vw, 48vh); transform: scale(1.12); }
     }
-    @media (max-width: 640px) {
-        .footer-inner { flex-direction: column; align-items: flex-start; }
-        .site-footer { padding-bottom: 100px; }
+      @media (max-width: 640px) {
+        .footer-inner {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            font-size: 0.5rem;
+            letter-spacing: 1.5px;
+        }
+        .footer-inner > span:last-child {
+            display: none;
+        }
+        .site-footer { padding: 14px 16px 18px; }
         .floating-social { right: 14px; bottom: 14px; gap: 10px; }
         .social-icon { width: 40px; height: 40px; }
         .social-icon svg { width: 20px; height: 20px; }
