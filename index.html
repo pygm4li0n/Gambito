@@ -321,22 +321,38 @@
     }
     .work-card:hover .work-media::after { opacity: 1; }
 
-    .work-media::before {
-        content: "";
+        /* ═══ Laser sweep vertical — carta por carta ═══ */
+    .laser-sweep-bar {
         position: absolute;
-        top: -10%; bottom: -10%; left: -8%;
-        width: 2px;
-        background: linear-gradient(180deg, transparent, #FF6B4A, #fff, #FF6B4A, transparent);
-        box-shadow: 0 0 26px 8px rgba(255, 100, 60, 0.6);
+        left: -4%; right: -4%;
+        top: -20px;
+        height: 2px;
+        background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 107, 74, 0.55) 15%,
+            #FF6B4A 35%,
+            #ffffff 50%,
+            #FF6B4A 65%,
+            rgba(255, 107, 74, 0.55) 85%,
+            transparent 100%);
+        box-shadow:
+            0 0 22px 4px rgba(255, 100, 60, 0.7),
+            0 0 60px 10px rgba(255, 60, 30, 0.28);
         opacity: 0;
-        z-index: 3;
+        z-index: 10;
         pointer-events: none;
     }
-    .work-card:hover .work-media::before { opacity: 1; animation: laserSweep 1.9s ease-in-out infinite; }
-    @keyframes laserSweep {
-        0%   { left: -8%; }
-        50%  { left: 106%; }
-        100% { left: -8%; }
+    .work-card.sweeping .laser-sweep-bar {
+        animation: laserSweepV 1.4s cubic-bezier(0.2, 0.9, 0.4, 1) forwards;
+    }
+    @keyframes laserSweepV {
+        0%   { top: -20px; opacity: 0; }
+        8%   { opacity: 1; }
+        90%  { opacity: 1; }
+        100% { top: 100%; opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .laser-sweep-bar { display: none; }
     }
 
     .work-media.img-error::after {
@@ -352,22 +368,7 @@
         color: var(--muted);
         background: none;
     }
-    .work-tag {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        background: var(--chrome-btn);
-        color: #07080b;
-        font-family: 'Space Mono', monospace;
-        font-size: 0.5rem;
-        font-weight: 700;
-        letter-spacing: 1.5px;
-        padding: 5px 12px;
-        border-radius: 40px;
-        box-shadow: 0 0 18px rgba(255, 110, 70, 0.4);
-        z-index: 4;
-        text-shadow: 0 1px 0 rgba(255,255,255,0.55);
-    }
+    
     .work-body { padding: 14px 16px 18px; position: relative; z-index: 1; }
     .work-title {
         font-family: 'Bebas Neue', sans-serif;
@@ -379,28 +380,7 @@
     }
     .work-desc { font-size: 0.68rem; line-height: 1.55; color: var(--muted); }
 
-    .var-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 4px; }
-    .var-btn {
-        font-family: 'Space Mono', monospace;
-        background: transparent;
-        border: 1px solid rgba(255, 200, 180, 0.18);
-        color: var(--soft);
-        font-size: 0.52rem;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        padding: 5px 9px;
-        border-radius: 40px;
-        cursor: pointer;
-        transition: all 0.2s;
-    }
-    .var-btn:hover { border-color: var(--laser-halo); color: var(--laser-halo); }
-    .var-btn.active {
-        background: var(--chrome-btn);
-        border-color: var(--laser-halo);
-        color: #07080b;
-        box-shadow: 0 0 18px rgba(255, 110, 70, 0.35);
-        text-shadow: 0 1px 0 rgba(255,255,255,0.55);
-    }
+   
 
     .work-price {
         margin-top: 12px;
@@ -751,7 +731,7 @@
         padding: 16px 56px 16px 18px;
         border-bottom: 1px solid var(--border);
     }
-    .lightbox-top .work-tag { position: static; box-shadow: none; }
+
     #lbTitle { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; line-height: 1; letter-spacing: 1px; color: var(--white); }
     .lightbox-img {
         flex: 1;
@@ -776,7 +756,6 @@
         -webkit-text-fill-color: transparent;
         filter: drop-shadow(0 0 16px rgba(255, 100, 60, 0.25));
     }
-    #lbVar { font-family: 'Space Mono', monospace; font-size: 0.62rem; letter-spacing: 2px; text-transform: uppercase; color: var(--soft); }
     #lbDesc { font-size: 0.75rem; line-height: 1.65; color: var(--soft); }
     .lb-wa-btn {
         align-self: flex-start;
@@ -984,9 +963,8 @@
 
     .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.9s cubic-bezier(0.2, 0.9, 0.4, 1), transform 0.9s cubic-bezier(0.2, 0.9, 0.4, 1); }
     .reveal.in { opacity: 1; transform: translateY(0); }
-    @media (prefers-reduced-motion: reduce) {
+      @media (prefers-reduced-motion: reduce) {
         .reveal { opacity: 1; transform: none; transition: none; }
-        .work-card:hover .work-media::before { animation: none; opacity: .4; }
     }
 
     /* ═══════════ RESPONSIVE ═══════════ */
@@ -1447,14 +1425,12 @@
 <div id="lightbox" role="dialog" aria-modal="true" aria-label="Vista de la pieza">
     <div class="lightbox-inner">
         <button type="button" class="lightbox-close" id="lbClose" aria-label="Cerrar">✕</button>
-        <div class="lightbox-top">
-            <span class="work-tag" id="lbTag"></span>
+               <div class="lightbox-top">
             <h3 id="lbTitle"></h3>
         </div>
         <div class="lightbox-img"><img id="lbImg" alt=""></div>
         <div class="lightbox-bottom">
             <p id="lbPrice"></p>
-            <p id="lbVar"></p>
             <p id="lbDesc"></p>
             <a id="lbWa" class="lb-wa-btn" href="#" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
         </div>
@@ -1511,7 +1487,6 @@
                     </div>
                     <div class="field"><label for="wTitle">Título</label><input type="text" id="wTitle" maxlength="60" required></div>
                     <div class="field"><label for="wDesc">Descripción</label><input type="text" id="wDesc" maxlength="120"></div>
-                    <div class="field"><label for="wTag">Etiqueta</label><input type="text" id="wTag" maxlength="16"></div>
                     <div class="form-actions">
                         <button type="submit" class="btn-save" id="saveBtn">Guardar</button>
                         <button type="button" id="cancelEditBtn" class="btn-cancel" style="display:none">Cancelar edición</button>
@@ -1549,7 +1524,7 @@
     const ADMIN_USER = "ADMIN";
     const ADMIN_PASS = "153045";
     const DEFAULT_PRICE = 18000;
-    const VARIANTS = ["ACERO", "ALUMINIO", "MADERA", "CUERO", "ACRÍLICO"];
+
 
     const SUPABASE_URL = "https://zzrmqidzfjqrmrictels.supabase.co";
     const SUPABASE_ANON_KEY = "sb_publishable_6b27IFeNHruaWcIO5mP_yg_lwn79eZ5";
@@ -1618,7 +1593,6 @@
 
     let works = [];
     let price = DEFAULT_PRICE;
-    let selectedVars = {};
     let editingId = null;
     let currentImageData = "";
     let confirmResolver = null;
@@ -1706,29 +1680,41 @@
     function isLoggedIn() { try { return sessionStorage.getItem(SESSION_KEY) === "1"; } catch (err) { return false; } }
     function setLoggedIn(v) { try { if (v) sessionStorage.setItem(SESSION_KEY, "1"); else sessionStorage.removeItem(SESSION_KEY); } catch (err) { /* priv */ } }
 
+        let sweepObserver = null;
+    function queueSweepOnScroll() {
+        const cards = document.querySelectorAll(".work-card");
+        if (!cards.length) return;
+        if (sweepObserver) sweepObserver.disconnect();
+        sweepObserver = new IntersectionObserver(function (entries) {
+            const fresh = entries.filter(function (e) {
+                return e.isIntersecting && !e.target.classList.contains("sweeping");
+            });
+            fresh.forEach(function (entry, i) {
+                const bar = entry.target.querySelector(".laser-sweep-bar");
+                if (bar) bar.style.animationDelay = (i * 150) + "ms";
+                entry.target.classList.add("sweeping");
+                sweepObserver.unobserve(entry.target);
+            });
+        }, { threshold: 0.15, rootMargin: "0px 0px -60px 0px" });
+        cards.forEach(function (c) { sweepObserver.observe(c); });
+    }
+
     function renderWorks() {
         const grid = $("worksGrid");
         if (!works.length) { grid.innerHTML = '<div class="works-empty">Todavía no hay piezas cargadas. Volvé pronto.</div>'; return; }
         grid.innerHTML = works.map(function (w) {
             const title = escapeHtml(w.title);
             const desc = escapeHtml(w.desc);
-            const tag = escapeHtml(w.tag);
             const pid = escapeHtml(w.id);
-            if (!selectedVars[w.id]) selectedVars[w.id] = "ACERO";
-            const varButtons = VARIANTS.map(function (v) {
-                const active = selectedVars[w.id] === v ? " active" : "";
-                return '<button type="button" class="var-btn' + active + '" data-var="' + escapeHtml(v) + '" data-pid="' + pid + '">' + escapeHtml(v) + '</button>';
-            }).join("");
             return '' +
                 '<article class="work-card" data-open="' + pid + '" tabindex="0" role="button" aria-label="Ver ' + title + '">' +
+                    '<span class="laser-sweep-bar" aria-hidden="true"></span>' +
                     '<div class="work-media">' +
                         '<img src="' + escapeHtml(w.img) + '" alt="' + title + '" loading="lazy" decoding="async" onerror="this.style.display=\'none\';this.parentElement.classList.add(\'img-error\')">' +
-                        (tag ? '<span class="work-tag">' + tag + '</span>' : '') +
                     '</div>' +
                     '<div class="work-body">' +
                         '<h3 class="work-title">' + title + '</h3>' +
                         (desc ? '<p class="work-desc">' + desc + '</p>' : '') +
-                        '<div class="var-row" data-pid="' + pid + '">' + varButtons + '</div>' +
                         '<div class="work-price">' + formatPrice(price) + '<span>ARS</span></div>' +
                     '</div>' +
                 '</article>';
@@ -1739,31 +1725,18 @@
                 if (ev.key === "Enter" || ev.key === " " || ev.key === "Spacebar") { ev.preventDefault(); openLightbox(card.getAttribute("data-open")); }
             });
         });
-        grid.querySelectorAll(".var-btn").forEach(function (btn) {
-            btn.addEventListener("click", function (ev) {
-                ev.stopPropagation();
-                const pid = btn.getAttribute("data-pid");
-                const variant = btn.getAttribute("data-var");
-                selectedVars[pid] = variant;
-                renderWorks();
-            });
-        });
+        queueSweepOnScroll();
     }
 
-    function openLightbox(id) {
+        function openLightbox(id) {
         const work = works.filter(function (w) { return String(w.id) === String(id); })[0];
         if (!work) return;
-        const variant = selectedVars[work.id] || "ACERO";
         $("lbImg").src = work.img || "";
         $("lbImg").alt = work.title || "";
         $("lbTitle").textContent = work.title || "";
         $("lbDesc").textContent = work.desc || "";
         $("lbPrice").textContent = formatPrice(price) + " ARS";
-        $("lbVar").textContent = "Material seleccionado: " + variant;
-        const tagEl = $("lbTag");
-        tagEl.textContent = work.tag || "";
-        tagEl.style.display = work.tag ? "" : "none";
-        $("lbWa").href = waLink('Hola GAMBITO LÁSER, me interesa "' + (work.title || "") + '" en ' + variant + ' (' + formatPrice(price) + '). ¿Está disponible?');
+        $("lbWa").href = waLink('Hola GAMBITO LÁSER, me interesa "' + (work.title || "") + '" (' + formatPrice(price) + '). ¿Está disponible?');
         $("lightbox").classList.add("open");
         document.body.style.overflow = "hidden";
     }
@@ -1782,7 +1755,7 @@
         $("adminPanel").style.display = "";
         renderAdminList(); updatePriceInput();
         const draft = loadFormDraft();
-        if (draft && (draft.title || draft.desc || draft.tag || draft.img)) restoreDraft(draft); else resetForm();
+             if (draft && (draft.title || draft.desc || draft.img)) restoreDraft(draft); else resetForm();
     }
     function handleLogin(ev) {
         ev.preventDefault();
@@ -1807,11 +1780,11 @@
         const list = $("adminList");
         if (!works.length) { list.innerHTML = '<p class="admin-empty">Sin piezas cargadas.</p>'; return; }
         list.innerHTML = works.map(function (w, i) {
-            const title = escapeHtml(w.title), tag = escapeHtml(w.tag), id = escapeHtml(w.id);
+                        const title = escapeHtml(w.title), id = escapeHtml(w.id);
             return '' +
                 '<div class="admin-item" data-id="' + id + '">' +
                     '<div class="admin-thumb"><img src="' + escapeHtml(w.img) + '" alt="" loading="lazy" onerror="this.style.display=\'none\'"></div>' +
-                    '<div class="admin-item-info"><strong>' + title + '</strong>' + (tag ? '<span>' + tag + '</span>' : '') + '</div>' +
+                                       '<div class="admin-item-info"><strong>' + title + '</strong></div>' +
                     '<div class="admin-item-actions">' +
                         '<button type="button" data-up="' + id + '" title="Subir"' + (i === 0 ? " disabled" : "") + '>↑</button>' +
                         '<button type="button" data-down="' + id + '" title="Bajar"' + (i === works.length - 1 ? " disabled" : "") + '>↓</button>' +
@@ -1847,7 +1820,7 @@
 
     function loadIntoForm(w) {
         editingId = w.id; currentImageData = w.img || "";
-        $("wTitle").value = w.title || ""; $("wDesc").value = w.desc || ""; $("wTag").value = w.tag || "";
+     $("wTitle").value = w.title || ""; $("wDesc").value = w.desc || "";
         $("wFile").value = "";
         if (currentImageData) {
             $("wPreviewImg").src = currentImageData;
@@ -1872,7 +1845,6 @@
         ev.preventDefault();
         const title = $("wTitle").value.trim();
         const desc = $("wDesc").value.trim();
-        const tag = $("wTag").value.trim();
         if (!title) { adminStatus("El título es obligatorio", "error"); $("wTitle").focus(); return; }
         if (!currentImageData) { adminStatus("Subí una imagen", "error"); return; }
         let img = currentImageData;
@@ -1884,9 +1856,9 @@
         const wasEditing = !!editingId;
         if (editingId) {
             const work = works.filter(function (w) { return String(w.id) === String(editingId); })[0];
-            if (work) { work.img = img; work.title = title; work.desc = desc; work.tag = tag; }
+                        if (work) { work.img = img; work.title = title; work.desc = desc; }
         } else {
-            works.unshift({ id: "g" + Date.now().toString(36) + Math.random().toString(36).slice(2, 5), img: img, title: title, desc: desc, tag: tag });
+                       works.unshift({ id: "g" + Date.now().toString(36) + Math.random().toString(36).slice(2, 5), img: img, title: title, desc: desc });
         }
         const ok = await persistWorks();
         if (!ok) { works = snapshot; renderWorks(); renderAdminList(); return; }
@@ -1967,7 +1939,7 @@
     }
 
     function saveFormDraft() {
-        try { localStorage.setItem(DRAFT_KEY, JSON.stringify({ editingId: editingId, title: $("wTitle").value, desc: $("wDesc").value, tag: $("wTag").value, img: currentImageData })); }
+               try { localStorage.setItem(DRAFT_KEY, JSON.stringify({ editingId: editingId, title: $("wTitle").value, desc: $("wDesc").value, img: currentImageData })); }
         catch (err) { /* silencioso */ }
     }
     function loadFormDraft() { try { const raw = localStorage.getItem(DRAFT_KEY); return raw ? JSON.parse(raw) : null; } catch (err) { return null; } }
@@ -1976,7 +1948,7 @@
     function restoreDraft(draft) {
         editingId = draft.editingId || null;
         if (editingId && !works.some(function (w) { return String(w.id) === String(editingId); })) editingId = null;
-        $("wTitle").value = draft.title || ""; $("wDesc").value = draft.desc || ""; $("wTag").value = draft.tag || "";
+             $("wTitle").value = draft.title || ""; $("wDesc").value = draft.desc || "";
         currentImageData = draft.img || ""; $("wFile").value = "";
         if (currentImageData) {
             $("wPreviewImg").src = currentImageData; $("wPreview").style.display = "block";
@@ -2034,7 +2006,7 @@
         $("confirmCancelBtn").addEventListener("click", function () { closeConfirm(false); });
         $("confirmDeleteBtn").addEventListener("click", function () { closeConfirm(true); });
         $("confirmOverlay").addEventListener("click", function (ev) { if (ev.target === $("confirmOverlay")) closeConfirm(false); });
-        ["wTitle", "wDesc", "wTag"].forEach(function (id) { $(id).addEventListener("input", saveFormDraft); });
+                ["wTitle", "wDesc"].forEach(function (id) { $(id).addEventListener("input", saveFormDraft); });
         document.addEventListener("keydown", function (ev) {
             if (ev.key === "Escape") {
                 if ($("confirmOverlay").classList.contains("open")) closeConfirm(false);
@@ -2046,10 +2018,9 @@
         });
     }
 
-    async function init() {
+       async function init() {
         works = await loadWorks();
         price = await loadPrice();
-        works.forEach(function (w) { if (!selectedVars[w.id]) selectedVars[w.id] = "ACERO"; });
         bindEvents();
         renderWorks();
         initReveal();
@@ -2127,33 +2098,27 @@
 </script>
 
 <script>
-/* Cursor mira láser */
+/* Cursor mira láser — sin delay, posición instantánea */
 (function () {
     'use strict';
     var cursor = document.getElementById('mm-cursor');
     if (!cursor) return;
     if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
-    var mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
-    var cursorX = mouseX, cursorY = mouseY, lerp = 0.18;
-    document.addEventListener('mousemove', function (e) {
-        mouseX = e.clientX; mouseY = e.clientY;
+
+    function move(e) {
+        cursor.style.transform = 'translate3d(' + e.clientX + 'px, ' + e.clientY + 'px, 0) translate(-50%, -50%)';
         if (!cursor.classList.contains('is-active')) cursor.classList.add('is-active');
-    });
+    }
+
+    document.addEventListener('mousemove', move, { passive: true });
     document.addEventListener('mouseleave', function () { cursor.classList.remove('is-active'); });
     document.addEventListener('mouseenter', function () { cursor.classList.add('is-active'); });
     document.addEventListener('mouseover', function (e) {
         var t = e.target;
         if (!t || typeof t.closest !== 'function') return;
-        var hot = t.closest('a, button, .work-card, .social-icon, .step, .material-card, .admin-item, .var-btn');
+        var hot = t.closest('a, button, .work-card, .social-icon, .step, .material-card, .admin-item');
         cursor.classList.toggle('is-hot', !!hot);
     });
-    function animate() {
-        cursorX += (mouseX - cursorX) * lerp;
-        cursorY += (mouseY - cursorY) * lerp;
-        cursor.style.transform = 'translate3d(' + cursorX + 'px, ' + cursorY + 'px, 0) translate(-50%, -50%)';
-        requestAnimationFrame(animate);
-    }
-    animate();
 })();
 </script>
 </body>
