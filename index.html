@@ -209,7 +209,15 @@
         margin-left: 8px;
         vertical-align: middle;
     }
-    .section-desc { font-size: 0.75rem; line-height: 1.65; color: var(--muted); max-width: 40ch; text-align: right; }
+   .section-desc {
+    font-size: 0.75rem;
+    line-height: 1.65;
+    color: var(--muted);
+    max-width: min(100%, 92ch);
+    text-align: right;
+    flex: 1 1 auto;
+    min-width: 0;
+}
 
     /* ═══════════ TRABAJOS — lead copy + catálogo ═══════════ */
        #trabajos {
