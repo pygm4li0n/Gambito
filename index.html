@@ -212,7 +212,7 @@
     .section-desc { font-size: 0.75rem; line-height: 1.65; color: var(--muted); max-width: 40ch; text-align: right; }
 
     /* ═══════════ TRABAJOS — lead copy + catálogo ═══════════ */
-    #trabajos {
+       #trabajos {
         position: relative;
         padding: clamp(72px, 10vw, 128px) clamp(20px, 4vw, 60px) clamp(60px, 8vw, 100px);
         background:
@@ -220,6 +220,8 @@
             radial-gradient(ellipse 600px 400px at 10% 90%, rgba(255, 100, 60, 0.06), transparent 60%),
             var(--charcoal);
         border-top: 1px solid var(--border);
+        content-visibility: auto;
+        contain-intrinsic-size: 1px 800px;
     }
 
     .works-lead {
@@ -474,11 +476,13 @@
     }
 
     /* ═══════════ CÓMO ENCARGAR ═══════════ */
-    #pedido {
+       #pedido {
         padding: clamp(72px, 10vw, 128px) clamp(20px, 4vw, 60px);
         background: var(--deep);
         border-top: 1px solid var(--border);
         border-bottom: 1px solid var(--border);
+        content-visibility: auto;
+        contain-intrinsic-size: 1px 800px;
     }
     .steps {
         display: grid;
@@ -535,11 +539,13 @@
     }
 
     /* ═══════════ MATERIALES ═══════════ */
-    #materiales {
+     #materiales {
         padding: clamp(72px, 10vw, 128px) clamp(20px, 4vw, 60px);
         background:
             radial-gradient(ellipse 700px 500px at 15% 15%, rgba(255, 110, 70, 0.06), transparent 60%),
             var(--charcoal);
+        content-visibility: auto;
+        contain-intrinsic-size: 1px 800px;
     }
     .materials-grid {
         display: grid;
@@ -1049,9 +1055,63 @@
     }
     .mm-cursor.is-hot::before, .mm-cursor.is-hot::after { opacity: 0; }
 
-    @media (hover: none) and (pointer: coarse) {
+        @media (hover: none) and (pointer: coarse) {
         body, body * { cursor: auto !important; }
         .mm-cursor { display: none !important; }
+    }
+
+    /* ═══════════ MOBILE LITE MODE ═══════════ */
+    @media (max-width: 768px), (hover: none) and (pointer: coarse) {
+        /* 1) Apagar chrome-shift (background-position con clip:text = repaint caro) */
+        .brand-name,
+        .section-title,
+        .works-lead strong,
+        .work-price,
+        .step-num,
+        .marquee-content span,
+        #lbPrice {
+            animation: none !important;
+        }
+        .brand-mark::after,
+        .site-footer::before { animation: none !important; }
+
+        /* 2) Reemplazar drop-shadow triple por uno barato */
+        .brand-name {
+            filter: drop-shadow(0 0 16px rgba(255,110,70,0.55))
+                    drop-shadow(0 4px 10px rgba(0,0,0,0.85));
+        }
+        .section-title,
+        .works-lead strong,
+        .marquee-content span,
+        .hero-laser { filter: none !important; }
+
+        /* 3) Quitar backdrop-filter (Android lo sufre muchísimo) */
+        .social-icon,
+        #lightbox, #adminOverlay, #confirmOverlay {
+            -webkit-backdrop-filter: none !important;
+            backdrop-filter: none !important;
+        }
+        #lightbox, #adminOverlay, #confirmOverlay {
+            background: rgba(0, 0, 0, 0.94);
+        }
+
+        /* 4) Detener pulso infinito del dot admin */
+        .admin-dot { animation: none !important; opacity: 0.9; }
+
+        /* 5) Aligerar hover de cards (no aplica en touch, pero por si acaso) */
+        .work-card:hover {
+            transform: none;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+    }
+
+    /* Respeto global a reduced-motion */
+    @media (prefers-reduced-motion: reduce) {
+        .brand-name, .section-title, .marquee-track, .brand-mark::after,
+        .work-card, .step, .material-card, .social-icon {
+            animation: none !important;
+            transition: none !important;
+        }
     }
 </style>
 </head>
@@ -2034,23 +2094,44 @@
 </script>
 
 <script>
-/* Chispas ambiente (fondo) — red laser palette */
+/* Chispas ambiente — OPTIMIZADO MOBILE (sin shadowBlur, con sprite, pausable) */
 (function () {
   'use strict';
   var canvas = document.getElementById('mm-fx-particles');
   if (!canvas) return;
-  var ctx = canvas.getContext('2d');
-  var W = 0, H = 0;
-  var sparks = [];
-  var COLOR = '255, 100, 60';
+
+  var isMobile = window.matchMedia('(max-width: 768px), (pointer: coarse)').matches
+              || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) { canvas.style.display = 'none'; return; }
+
+  var ctx = canvas.getContext('2d', { alpha: true });
+  var W = 0, H = 0, sparks = [];
+  var paused = false, rafId = null;
+
+  // Sprite pre-renderizado — reemplaza shadowBlur (10x más rápido)
+  var sprite = document.createElement('canvas');
+  sprite.width = sprite.height = 24;
+  (function () {
+    var sc = sprite.getContext('2d');
+    var g = sc.createRadialGradient(12, 12, 0, 12, 12, 12);
+    g.addColorStop(0,    'rgba(255,255,255,1)');
+    g.addColorStop(0.25, 'rgba(255,160,120,0.9)');
+    g.addColorStop(0.55, 'rgba(255,100,60,0.4)');
+    g.addColorStop(1,    'rgba(255,100,60,0)');
+    sc.fillStyle = g;
+    sc.fillRect(0, 0, 24, 24);
+  })();
 
   function seed() {
-    var count = Math.min(60, Math.round((W * H) / 34000));
+    var density = isMobile ? 65000 : 34000;
+    var cap     = isMobile ? 14 : 55;
+    var count   = Math.min(cap, Math.round((W * H) / density));
     sparks = [];
     for (var i = 0; i < count; i++) {
       sparks.push({
         x: Math.random() * W, y: Math.random() * H,
-        r: Math.random() * 1.4 + 0.35,
+        s: Math.random() * 8 + 5,
         vx: (Math.random() - 0.5) * 0.24,
         vy: -(Math.random() * 0.45 + 0.1),
         o: Math.random() * 0.45 + 0.15,
@@ -2058,43 +2139,45 @@
       });
     }
   }
+
   function resize() {
-    var dpr = window.devicePixelRatio || 1;
+    var dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1.25 : 2);
     W = window.innerWidth; H = window.innerHeight;
     canvas.width = W * dpr; canvas.height = H * dpr;
     canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     seed();
   }
-  function paint(p) {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(' + COLOR + ', ' + p.o + ')';
-    ctx.shadowColor = 'rgba(' + COLOR + ', 0.9)';
-    ctx.shadowBlur = 12;
-    ctx.fill();
-  }
+
   function draw() {
+    if (paused) { rafId = null; return; }
     ctx.clearRect(0, 0, W, H);
     for (var i = 0; i < sparks.length; i++) {
       var p = sparks[i];
       p.x += p.vx; p.y += p.vy; p.flick += 0.06;
       p.vx += (Math.random() - 0.5) * 0.02;
-      if (p.vx > 0.4) p.vx = 0.4;
+      if (p.vx >  0.4) p.vx =  0.4;
       if (p.vx < -0.4) p.vx = -0.4;
       if (p.y < -12) { p.y = H + 12; p.x = Math.random() * W; }
       if (p.x < -12) p.x = W + 12;
       if (p.x > W + 12) p.x = -12;
-      var base = p.o;
-      p.o = base * (0.65 + Math.sin(p.flick) * 0.35);
-      paint(p);
-      p.o = base;
+      ctx.globalAlpha = p.o * (0.65 + Math.sin(p.flick) * 0.35);
+      ctx.drawImage(sprite, p.x - p.s / 2, p.y - p.s / 2, p.s, p.s);
     }
-    requestAnimationFrame(draw);
+    ctx.globalAlpha = 1;
+    rafId = requestAnimationFrame(draw);
   }
+
+  function start() { if (!paused && rafId === null) rafId = requestAnimationFrame(draw); }
+  function stop()  { paused = true; if (rafId) { cancelAnimationFrame(rafId); rafId = null; } }
+
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) stop(); else { paused = false; start(); }
+  });
+
   window.addEventListener('resize', resize);
   resize();
-  requestAnimationFrame(draw);
+  start();
 })();
 </script>
 
@@ -2120,6 +2203,42 @@
         var hot = t.closest('a, button, .work-card, .social-icon, .step, .material-card, .admin-item');
         cursor.classList.toggle('is-hot', !!hot);
     });
+})();
+</script>
+
+<script>
+/* Pausa el SVG del hero cuando sale de pantalla + se detiene en mobile */
+(function () {
+  var svg = document.querySelector('.hero-laser');
+  if (!svg || typeof svg.pauseAnimations !== 'function') return;
+
+  var isMobile = window.matchMedia('(max-width: 768px), (pointer: coarse)').matches;
+  var visible = true;
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (svg.__mmFrozen) return; // mobile: ya quedó estático
+        if (e.isIntersecting && !visible) {
+          visible = true;
+          if (svg.unpauseAnimations) svg.unpauseAnimations();
+        } else if (!e.isIntersecting && visible) {
+          visible = false;
+          if (svg.pauseAnimations) svg.pauseAnimations();
+        }
+      });
+    }, { threshold: 0.05 }).observe(svg);
+  }
+
+  // En mobile: correr 1 ciclo y frenar en un frame bonito (logo revelado, sin chispas infinitas)
+   if (isMobile) {
+    setTimeout(function () {
+    try { svg.setCurrentTime(4.69); } catch (e) {}
+      if (svg.pauseAnimations) svg.pauseAnimations();
+      // En mobile queda congelado para siempre (no reanimar al volver)
+      svg.__mmFrozen = true;
+    }, 5200);
+  }
 })();
 </script>
 </body>
