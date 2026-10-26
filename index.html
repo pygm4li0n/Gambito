@@ -1459,20 +1459,20 @@
             El grabado es permanente: no se borra, no se despega, no se cae.
         </p>
     </div>
-    <div class="materials-grid reveal">
-        <article class="material-card">
+       <div class="materials-grid reveal">
+        <article class="material-card" style="background-image: linear-gradient(180deg, rgba(4,5,7,0.55) 0%, rgba(4,5,7,0.88) 100%), url('https://i.postimg.cc/k4bWvn7f/images-(15).jpg'); background-size: cover; background-position: center;">
             <span class="material-name">Acero inoxidable</span>
             <span class="material-meta">1,5 mm</span>
         </article>
-        <article class="material-card">
+        <article class="material-card" style="background-image: linear-gradient(180deg, rgba(4,5,7,0.55) 0%, rgba(4,5,7,0.88) 100%), url('https://i.postimg.cc/856Lm1TZ/images-(14).jpg'); background-size: cover; background-position: center;">
             <span class="material-name">Aluminio</span>
             <span class="material-meta">1,2 mm</span>
         </article>
-        <article class="material-card">
+        <article class="material-card" style="background-image: linear-gradient(180deg, rgba(4,5,7,0.55) 0%, rgba(4,5,7,0.88) 100%), url('https://i.postimg.cc/Hxyb9pTZ/images-(16).jpg'); background-size: cover; background-position: center;">
             <span class="material-name">Madera</span>
             <span class="material-meta">3 mm</span>
         </article>
-        <article class="material-card">
+        <article class="material-card" style="background-image: linear-gradient(180deg, rgba(4,5,7,0.55) 0%, rgba(4,5,7,0.88) 100%), url('https://i.postimg.cc/vBV5tQG2/images-(17).jpg'); background-size: cover; background-position: center;">
             <span class="material-name">Cuero</span>
             <span class="material-meta">2 mm</span>
         </article>
@@ -1544,10 +1544,9 @@
                 <h3>Administración</h3>
                 <small>Precio base y piezas del catálogo.</small>
             </div>
-            <div class="admin-head-actions">
-                <button type="button" id="logoutBtn" class="btn-cancel">Salir</button>
-                <button type="button" id="closePanelBtn" class="btn-save">Cerrar</button>
-            </div>
+                   <div class="admin-head-actions">
+            <button type="button" id="closePanelBtn" class="btn-save">Cerrar</button>
+        </div>
         </div>
         <div class="admin-status" id="adminStatus" role="status" aria-live="polite"></div>
         <div class="admin-grid">
@@ -1606,8 +1605,8 @@
 (function () {
     "use strict";
     const WA_NUMBER = "543462415932";
-    const ADMIN_USER = "ADMIN";
-    const ADMIN_PASS = "153045";
+    const ADMIN_USER = "ADRI";
+    const ADMIN_PASS = "1234";
     const DEFAULT_PRICE = 18000;
 
 
@@ -1762,8 +1761,8 @@
         return data.publicUrl;
     }
 
-    function isLoggedIn() { try { return sessionStorage.getItem(SESSION_KEY) === "1"; } catch (err) { return false; } }
-    function setLoggedIn(v) { try { if (v) sessionStorage.setItem(SESSION_KEY, "1"); else sessionStorage.removeItem(SESSION_KEY); } catch (err) { /* priv */ } }
+       function isLoggedIn() { try { return localStorage.getItem(SESSION_KEY) === "1"; } catch (err) { return false; } }
+    function setLoggedIn(v) { try { if (v) localStorage.setItem(SESSION_KEY, "1"); else localStorage.removeItem(SESSION_KEY); } catch (err) { /* priv */ } }
 
         let sweepObserver = null;
     function queueSweepOnScroll() {
@@ -2081,7 +2080,6 @@
         $("adminTrigger").addEventListener("click", openAdmin);
         $("loginForm").addEventListener("submit", handleLogin);
         $("loginCancel").addEventListener("click", closeAdmin);
-        $("logoutBtn").addEventListener("click", function () { setLoggedIn(false); showLogin(); loginMsg("Sesión cerrada", "info"); });
         $("closePanelBtn").addEventListener("click", closeAdmin);
         $("workForm").addEventListener("submit", saveWork);
         $("wFile").addEventListener("change", handleFileChange);
