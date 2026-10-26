@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>GAMBITO LÁSER — GRABADO CNC · WHITE-HOT EDITION</title>
+<title>Damián Núñez — GAMBITO LÁSER</title>
 <meta name="description" content="GAMBITO LÁSER — Grabado láser CNC, tarjetas de colección y trabajos personalizados. Venado Tuerto, Santa Fe.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2307080b'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial' font-size='36' font-weight='900' text-anchor='middle' fill='%23ffffff'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23040507'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial' font-size='36' font-weight='900' text-anchor='middle' fill='%23ff6b4a'%3EG%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
@@ -13,48 +13,48 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-        --bg: #07080b;
-        --deep: #0a0c11;
-        --charcoal: #0d0f15;
-        --card: #121520;
-        --border: #232834;
+        --bg: #040507;
+        --deep: #06070b;
+        --charcoal: #080a0f;
+        --card: #0d0f17;
+        --border: #1c2029;
         --white: #FFFFFF;
-        --ink: #EEF2F8;
-        --soft: #B8C0CD;
-        --muted: #7B8290;
-        --accent: #E8EFF8;
+        --ink: #F2EDEE;
+        --soft: #C2BEC0;
+        --muted: #7F7A7E;
+        --accent: #FFE0D0;
         --accent-hi: #FFFFFF;
-        --accent-glow: rgba(232, 239, 248, 0.55);
-        --accent-soft: rgba(232, 239, 248, 0.10);
+        --accent-glow: rgba(255, 110, 70, 0.55);
+        --accent-soft: rgba(255, 110, 70, 0.10);
         --laser: #FFFFFF;
-        --laser-halo: #A8DEFF;
-        --laser-edge: #4FA9E8;
-        --laser-glow: rgba(168, 222, 255, 0.75);
+        --laser-halo: #FF6B4A;
+        --laser-edge: #FF3322;
+        --laser-glow: rgba(255, 100, 60, 0.75);
         --danger: #ff4d4d;
         --radius: 12px;
         --radius-lg: 18px;
         --chrome-grad: linear-gradient(180deg,
             #ffffff 0%,
-            #f6f9fc 8%,
-            #c4ccd7 22%,
-            #788499 40%,
-            #b8c1cc 48%,
+            #faf4f2 8%,
+            #d0c4c4 22%,
+            #82726f 40%,
+            #c4b4b0 48%,
             #ffffff 55%,
-            #f4f7fa 62%,
-            #8b95a3 78%,
-            #d4dae3 92%,
+            #f8f0ee 62%,
+            #92827e 78%,
+            #ddd2cd 92%,
             #ffffff 100%);
         --chrome-btn: linear-gradient(180deg,
             #ffffff 0%,
-            #eef3f8 30%,
-            #b8c1cc 50%,
-            #dde3ea 65%,
+            #faf3f1 30%,
+            #c4b8b5 50%,
+            #e3d8d5 65%,
             #ffffff 100%);
         --chrome-border: linear-gradient(135deg,
             #ffffff 0%,
-            rgba(196, 204, 215, 0.4) 22%,
-            rgba(79, 169, 232, 0.6) 50%,
-            rgba(196, 204, 215, 0.4) 78%,
+            rgba(208, 196, 196, 0.4) 22%,
+            rgba(255, 80, 40, 0.6) 50%,
+            rgba(208, 196, 196, 0.4) 78%,
             #ffffff 100%);
     }
 
@@ -74,474 +74,96 @@
 
     ::selection { background: var(--accent); color: #000; }
 
-    /* ═══════════ HERO ═══════════ */
+    /* ═══════════ HERO — BRAND + LASER REVEAL ═══════════ */
     .hero {
         position: relative;
-        padding: clamp(64px, 9vw, 120px) clamp(20px, 5vw, 60px) clamp(56px, 8vw, 96px);
+        min-height: 100dvh;
+        padding: clamp(28px, 4.5vw, 54px) clamp(20px, 5vw, 60px) clamp(40px, 6vw, 70px);
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         text-align: center;
         background:
             repeating-linear-gradient(95deg,
-                rgba(255,255,255,0.012) 0px,
-                rgba(255,255,255,0.012) 1px,
+                rgba(255,255,255,0.008) 0px,
+                rgba(255,255,255,0.008) 1px,
                 transparent 1px,
                 transparent 3px),
-            radial-gradient(ellipse 600px 400px at 50% 5%, rgba(255, 255, 255, 0.06), transparent 65%),
-            radial-gradient(ellipse at 50% -10%, #22262e 0%, #0e1015 50%, #07080b 75%);
+            radial-gradient(ellipse 900px 700px at 50% 34%, rgba(255, 80, 40, 0.13), transparent 68%),
+            radial-gradient(ellipse 500px 350px at 50% 8%, rgba(255, 120, 60, 0.08), transparent 60%),
+            radial-gradient(ellipse at 50% 0%, #1a0a0c 0%, #090506 55%, #040507 100%);
         overflow: hidden;
     }
-
     .hero::after {
         content: "";
         position: absolute;
-        left: 0; right: 0;
-        height: 2px;
-        top: -2%;
-        background: linear-gradient(90deg, transparent, rgba(168,222,255,.9), #fff, rgba(168,222,255,.9), transparent);
-        box-shadow: 0 0 44px 10px rgba(168,222,255,.35);
-        opacity: 0;
+        inset: 0;
+        background:
+            radial-gradient(circle 2px at 18% 22%, rgba(255, 180, 140, 0.55), transparent 60%),
+            radial-gradient(circle 1.5px at 82% 16%, rgba(255, 140, 100, 0.45), transparent 60%),
+            radial-gradient(circle 2px at 12% 78%, rgba(255, 180, 140, 0.4), transparent 60%),
+            radial-gradient(circle 1.5px at 88% 82%, rgba(255, 140, 100, 0.4), transparent 60%);
         pointer-events: none;
-        animation: beam 9s cubic-bezier(.55, 0, .45, 1) infinite;
-    }
-    @keyframes beam {
-        0%   { top: -2%;  opacity: 0; }
-        8%   { opacity: .9; }
-        88%  { opacity: .9; }
-        100% { top: 102%; opacity: 0; }
+        opacity: 0.8;
     }
 
-    .hero::before {
-        content: "";
-        position: absolute;
-        inset: 22px;
-        border: 1px solid rgba(232, 239, 248, 0.12);
-        border-radius: 6px;
-        pointer-events: none;
-        background-image:
-            linear-gradient(rgba(232,239,248,0.6) 0 1px, transparent 1px),
-            linear-gradient(90deg, rgba(232,239,248,0.6) 0 1px, transparent 1px),
-            linear-gradient(rgba(232,239,248,0.6) 0 1px, transparent 1px),
-            linear-gradient(90deg, rgba(232,239,248,0.6) 0 1px, transparent 1px);
-        background-size: 22px 1px, 1px 22px, 22px 1px, 1px 22px;
-        background-position: 0 0, 0 0, 100% 100%, 100% 100%;
-        background-repeat: no-repeat;
-    }
-
-    .hero-inner { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
-
-    .hero-kicker {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        font-family: 'Space Mono', monospace;
-        font-size: 0.55rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--soft);
-        border: 1px solid var(--border);
-        background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-        padding: 9px 18px;
-        border-radius: 40px;
-        margin-bottom: clamp(20px, 3vw, 34px);
-        box-shadow: 0 1px 0 rgba(255,255,255,0.08) inset;
-    }
-    .hero-kicker .live {
-        width: 7px; height: 7px;
-        border-radius: 50%;
-        background: var(--white);
-        box-shadow: 0 0 14px var(--laser-glow);
-        animation: dotPulse 1.8s ease-in-out infinite;
-    }
-    .hero-kicker b { color: var(--white); font-weight: 700; }
-
-    .logo {
+    .brand-mark {
+        position: relative;
+        z-index: 2;
+        margin-bottom: clamp(20px, 3.2vw, 36px);
+        text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
-        line-height: 0.82;
-        position: relative;
     }
-    .logo-word {
+    .brand-name {
+        display: inline-block;
         font-family: 'Bebas Neue', sans-serif;
-        font-size: clamp(4rem, 16vw, 12rem);
-        letter-spacing: 0.05em;
+        font-size: clamp(1.4rem, 4.5vw, 4.2rem);
+        line-height: 0.95;
+        letter-spacing: 0.25em;
+        padding-left: 0.25em;
+        text-transform: uppercase;
+        font-weight: 400;
         background: var(--chrome-grad);
-        background-size: 100% 300%;
+        background-size: 100% 240%;
         -webkit-background-clip: text;
         background-clip: text;
-        color: transparent;
+        -webkit-text-fill-color: transparent;
         filter:
-            drop-shadow(0 0 44px rgba(232, 239, 248, 0.28))
-            drop-shadow(0 16px 26px rgba(0, 0, 0, 0.95));
+            drop-shadow(0 0 28px rgba(255, 110, 70, 0.55))
+            drop-shadow(0 0 60px rgba(255, 80, 40, 0.28))
+            drop-shadow(0 14px 24px rgba(0, 0, 0, 0.9));
         animation: chromeShift 8s ease-in-out infinite;
-        position: relative;
+    }
+    .brand-mark::after {
+        content: "";
+        display: block;
+        width: clamp(60px, 12vw, 160px);
+        height: 1px;
+        margin-top: clamp(16px, 2.6vw, 26px);
+        background: linear-gradient(90deg, transparent, var(--laser-halo), #fff, var(--laser-halo), transparent);
+        box-shadow: 0 0 22px 2px rgba(255, 100, 60, 0.55);
+        animation: brandLine 4s ease-in-out infinite;
+    }
+    @keyframes brandLine {
+        0%, 100% { opacity: 0.65; width: clamp(60px, 10vw, 130px); }
+        50%      { opacity: 1;    width: clamp(80px, 14vw, 180px); }
     }
     @keyframes chromeShift {
         0%, 100% { background-position: 0 0; }
         50%      { background-position: 0 44%; }
     }
-    .logo-sub {
-        font-family: 'Space Mono', monospace;
-        font-weight: 700;
-        font-size: clamp(0.7rem, 1.9vw, 1.15rem);
-        letter-spacing: 0.72em;
-        padding-left: 0.72em;
-        margin-top: 12px;
-        background: var(--chrome-grad);
-        background-size: 100% 300%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        filter: drop-shadow(0 0 20px var(--laser-glow));
-        animation: chromeShift 8s ease-in-out infinite;
-    }
 
-    .hero-tags {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px 12px;
-        margin-top: clamp(20px, 3vw, 30px);
-        font-family: 'Space Mono', monospace;
-        font-size: clamp(0.52rem, 1.05vw, 0.66rem);
-        letter-spacing: 2.4px;
-        text-transform: uppercase;
-        color: var(--soft);
-    }
-    .hero-tags i { color: var(--white); font-style: normal; text-shadow: 0 0 12px var(--laser-glow); }
-
-    .hero-lead {
-        max-width: 66ch;
-        margin: 26px auto 0;
-        color: var(--ink);
-        font-size: clamp(0.95rem, 1.55vw, 1.12rem);
-        line-height: 1.78;
-        font-weight: 500;
-        letter-spacing: 0.2px;
-        text-align: center;
-    }
-    .hero-lead strong {
-        font-family: 'Bebas Neue', sans-serif;
-        font-weight: 400;
-        font-size: 1.45em;
-        letter-spacing: 2px;
-        background: var(--chrome-grad);
-        background-size: 100% 200%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        filter: drop-shadow(0 0 20px var(--laser-glow));
-        margin-right: 4px;
-        vertical-align: -1px;
-    }
-    .hero-lead em {
-        font-family: 'Space Mono', monospace;
-        font-style: italic;
-        font-weight: 700;
-        font-size: 0.9em;
-        letter-spacing: 1px;
-        color: var(--white);
-        text-shadow: 0 0 16px var(--laser-glow);
-    }
-
-    .hero-ctas {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-        justify-content: center;
-        margin-top: 32px;
-    }
-
-    .btn-primary {
-        font-family: 'Space Mono', monospace;
-        background: var(--chrome-btn);
-        color: #07080b;
-        padding: 15px 34px;
-        font-size: 0.7rem;
-        letter-spacing: 2px;
-        font-weight: 700;
-        text-transform: uppercase;
-        border-radius: 40px;
-        transition: all 0.25s;
-        display: inline-block;
-        text-shadow: 0 1px 0 rgba(255,255,255,0.55);
-        box-shadow:
-            0 1px 0 rgba(255,255,255,0.7) inset,
-            0 -1px 0 rgba(0,0,0,0.28) inset,
-            0 0 32px rgba(232, 239, 248, 0.32),
-            0 8px 20px rgba(0,0,0,0.5);
-    }
-    .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow:
-            0 1px 0 rgba(255,255,255,0.8) inset,
-            0 -1px 0 rgba(0,0,0,0.32) inset,
-            0 0 64px rgba(232, 239, 248, 0.5),
-            0 12px 28px rgba(0,0,0,0.6);
-    }
-
-    .btn-ghost {
-        font-family: 'Space Mono', monospace;
-        background: transparent;
-        border: 1.5px solid rgba(232, 239, 248, 0.28);
-        padding: 15px 34px;
-        font-size: 0.7rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        border-radius: 40px;
-        color: var(--white);
-        transition: all 0.22s;
-        display: inline-block;
-    }
-    .btn-ghost:hover {
-        border-color: var(--white);
-        color: var(--white);
-        box-shadow: 0 0 22px rgba(232, 239, 248, 0.45);
-        background: rgba(232, 239, 248, 0.06);
-    }
-
-    /* ─── FLOW ─── */
-    .hero-flow { margin-top: clamp(46px, 7vw, 82px); width: 100%; max-width: 1120px; }
-    .flow-eyebrow {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 14px;
-        font-family: 'Space Mono', monospace;
-        font-size: 0.55rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--muted);
-    }
-    .flow-eyebrow::before, .flow-eyebrow::after {
-        content: "";
-        height: 1px;
-        width: clamp(24px, 6vw, 64px);
-        background: linear-gradient(90deg, transparent, rgba(232, 239, 248, 0.28));
-    }
-    .flow-eyebrow::after { background: linear-gradient(90deg, rgba(232, 239, 248, 0.28), transparent); }
-
-    .flow-grid {
-        display: grid;
-        grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
-        gap: clamp(8px, 1.4vw, 16px);
-        align-items: start;
-        margin-top: 26px;
-        text-align: left;
-    }
-    .flow-step { min-width: 0; }
-    .flow-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px; }
-    .flow-num {
-        font-family: 'Bebas Neue', sans-serif;
-        font-size: 1.05rem;
-        letter-spacing: 1px;
-        color: var(--white);
-        text-shadow: 0 0 14px var(--laser-glow);
-    }
-    .flow-label {
-        font-family: 'Space Mono', monospace;
-        font-size: 0.5rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--muted);
-    }
-    .flow-media {
+    .hero-laser {
         position: relative;
-        aspect-ratio: 4 / 5;
-        overflow: hidden;
-        border-radius: var(--radius);
-        border: 1px solid var(--border);
-        background: var(--card);
-    }
-    .flow-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-    .flow-step:hover .flow-media img { transform: scale(1.05); }
-    .flow-desc { margin-top: 10px; font-size: 0.68rem; line-height: 1.55; color: var(--muted); }
-
-    .flow-connector {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 6px;
-        padding-top: 42px;
-    }
-    .flow-connector span {
-        width: 5px; height: 5px;
-        border-radius: 50%;
-        background: var(--laser-halo);
-        opacity: 0.25;
-        animation: dotPulse 1.6s ease-in-out infinite;
-    }
-    .flow-connector span:nth-child(2) { animation-delay: 0.2s; }
-    .flow-connector span:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes dotPulse {
-        0%, 100% { opacity: 0.2; transform: scale(0.8); }
-        50%      { opacity: 1;   transform: scale(1.25); }
-    }
-
-    .flow-step-placeholder {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        aspect-ratio: 4 / 5;
-        margin-top: 34px;
-        padding: 14px;
-        border: 1.5px dashed rgba(232, 239, 248, 0.4);
-        border-radius: var(--radius);
-        color: var(--white);
-        font-family: 'Space Mono', monospace;
-        font-size: 0.55rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        text-align: center;
-        line-height: 1.6;
-        transition: 0.25s;
-    }
-    .flow-step-placeholder:hover {
-        background: rgba(232, 239, 248, 0.06);
-        border-color: var(--white);
-        box-shadow: 0 0 30px rgba(168, 222, 255, 0.28);
-    }
-    .flow-step-placeholder svg { width: 26px; height: 26px; fill: currentColor; filter: drop-shadow(0 0 10px var(--laser-glow)); }
-
-    /* ═══════════ CNC SHOWCASE (1:1) ═══════════ */
-    #cnc {
-        position: relative;
-        padding: clamp(58px, 8vw, 100px) clamp(20px, 4vw, 60px);
-        background:
-            radial-gradient(ellipse 700px 500px at 20% 20%, rgba(255, 255, 255, 0.05), transparent 60%),
-            radial-gradient(ellipse 600px 450px at 80% 80%, rgba(168, 222, 255, 0.08), transparent 60%),
-            var(--charcoal);
-        border-top: 1px solid var(--border);
-        overflow: hidden;
-    }
-    .cnc-stage {
-        position: relative;
+        z-index: 2;
+        width: min(80vw, 62vh);
         max-width: 720px;
-        margin: 0 auto;
-        aspect-ratio: 1 / 1;
-        border: 1px solid rgba(232, 239, 248, 0.18);
-        border-radius: var(--radius-lg);
-        background:
-            repeating-linear-gradient(45deg,
-                rgba(255,255,255,0.008) 0px,
-                rgba(255,255,255,0.008) 1px,
-                transparent 1px,
-                transparent 4px),
-            radial-gradient(ellipse at 50% 50%, #161a22, #0a0c11);
-        overflow: hidden;
-        box-shadow:
-            inset 0 0 120px rgba(0,0,0,0.85),
-            0 24px 60px rgba(0,0,0,0.55),
-            0 0 0 1px rgba(232,239,248,0.06),
-            0 0 80px rgba(168, 222, 255, 0.08);
-    }
-    .cnc-stage::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image:
-            linear-gradient(rgba(232, 239, 248, 0.07) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(232, 239, 248, 0.07) 1px, transparent 1px);
-        background-size: 40px 40px;
-        pointer-events: none;
-        mask-image: radial-gradient(ellipse at center, #000 30%, transparent 85%);
-        -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 85%);
-    }
-    .cnc-showcase {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-    }
-    .cnc-corner {
-        position: absolute;
-        font-family: 'Space Mono', monospace;
-        font-size: 0.55rem;
-        letter-spacing: 1.5px;
-        color: var(--soft);
-        opacity: 0.8;
-        z-index: 3;
-        line-height: 1.5;
-    }
-    .cnc-corner.tl { top: 14px; left: 18px; }
-    .cnc-corner.tr { top: 14px; right: 18px; text-align: right; }
-    .cnc-corner.bl { bottom: 14px; left: 18px; }
-    .cnc-corner.br { bottom: 14px; right: 18px; text-align: right; }
-    .cnc-corner b { color: var(--white); font-weight: 700; text-shadow: 0 0 10px var(--laser-glow); }
-
-    /* ─── Laser trace & head ─── */
-    .laser-trace { filter: drop-shadow(0 0 8px rgba(168, 222, 255, 0.9)) drop-shadow(0 0 22px rgba(255, 255, 255, 0.55)); }
-
-    .spark {
-        transform-box: fill-box;
-        transform-origin: center;
-        animation: sparkFly 0.8s cubic-bezier(0.15, 0.6, 0.4, 1) infinite;
-        animation-delay: var(--delay, 0s);
-        will-change: transform, opacity;
-    }
-    @keyframes sparkFly {
-        0%   { transform: translate(0, 0) scale(1); opacity: 1; }
-        55%  { opacity: 0.9; }
-        100% { transform: translate(var(--dx), var(--dy)) scale(0.15); opacity: 0; }
-    }
-
-    /* ═══════════ MARQUEE ═══════════ */
-    .marquee {
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient(180deg, #0d0f15 0%, #07080b 100%);
-        border-top: 1px solid rgba(232, 239, 248, 0.2);
-        border-bottom: 1px solid rgba(232, 239, 248, 0.2);
-        padding: 26px 0;
-        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
-        mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
-    }
-    .marquee-track {
-        display: flex;
-        width: max-content;
-        animation: marqueeScroll 46s linear infinite;
-        will-change: transform;
-    }
-    .marquee:hover .marquee-track { animation-play-state: paused; }
-    @keyframes marqueeScroll {
-        from { transform: translate3d(0, 0, 0); }
-        to   { transform: translate3d(-50%, 0, 0); }
-    }
-    .marquee-content {
-        display: flex;
-        flex-shrink: 0;
-        gap: 64px;
-        padding-right: 64px;
-    }
-    .marquee-content span {
-        display: flex;
-        align-items: center;
-        gap: 64px;
-        white-space: nowrap;
-        font-family: 'Space Mono', monospace;
-        font-weight: 700;
-        font-size: clamp(0.85rem, 1.5vw, 1.15rem);
-        letter-spacing: 5px;
-        text-transform: uppercase;
-        background: var(--chrome-grad);
-        background-size: 100% 200%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        filter: drop-shadow(0 0 20px rgba(168, 222, 255, 0.2));
-        animation: chromeShift 6s ease-in-out infinite;
-    }
-    .marquee-content span::after {
-        content: "✦";
-        background: none;
-        -webkit-text-fill-color: var(--white);
-        color: var(--white);
-        font-size: 0.75rem;
-        text-shadow: 0 0 14px var(--laser-glow);
+        height: auto;
+        display: block;
+        filter: drop-shadow(0 0 90px rgba(255, 80, 40, 0.22));
     }
 
     /* ═══════════ SECTION HEADS ═══════════ */
@@ -558,7 +180,7 @@
         font-size: 0.55rem;
         letter-spacing: 4px;
         text-transform: uppercase;
-        color: var(--white);
+        color: var(--laser-halo);
         margin-bottom: 12px;
         text-shadow: 0 0 12px var(--laser-glow);
     }
@@ -580,7 +202,7 @@
         font-style: italic;
         font-size: 0.42em;
         letter-spacing: 1px;
-        -webkit-text-fill-color: var(--white);
+        -webkit-text-fill-color: var(--laser-halo);
         text-shadow: 0 0 22px var(--laser-glow);
         display: inline-block;
         margin-left: 8px;
@@ -588,16 +210,53 @@
     }
     .section-desc { font-size: 0.75rem; line-height: 1.65; color: var(--muted); max-width: 40ch; text-align: right; }
 
-    /* ═══════════ GALERÍA ═══════════ */
+    /* ═══════════ TRABAJOS — lead copy + catálogo ═══════════ */
     #trabajos {
         position: relative;
-        padding: clamp(58px, 8vw, 100px) clamp(20px, 4vw, 60px);
+        padding: clamp(72px, 10vw, 128px) clamp(20px, 4vw, 60px) clamp(60px, 8vw, 100px);
         background:
-            radial-gradient(ellipse 600px 400px at 90% 10%, rgba(255, 255, 255, 0.04), transparent 60%),
-            radial-gradient(ellipse 500px 350px at 10% 90%, rgba(168, 222, 255, 0.05), transparent 60%),
+            radial-gradient(ellipse 700px 500px at 90% 10%, rgba(255, 110, 70, 0.05), transparent 60%),
+            radial-gradient(ellipse 600px 400px at 10% 90%, rgba(255, 100, 60, 0.06), transparent 60%),
             var(--charcoal);
         border-top: 1px solid var(--border);
     }
+
+    .works-lead {
+        max-width: 60ch;
+        margin: 0 auto clamp(46px, 6vw, 76px);
+        text-align: center;
+        font-size: clamp(1.08rem, 1.95vw, 1.4rem);
+        line-height: 1.72;
+        color: var(--ink);
+        font-weight: 500;
+        letter-spacing: 0.15px;
+    }
+    .works-lead strong {
+        font-family: 'Bebas Neue', sans-serif;
+        font-weight: 400;
+        font-size: 2em;
+        line-height: 1;
+        letter-spacing: 4px;
+        background: var(--chrome-grad);
+        background-size: 100% 240%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 26px var(--laser-glow)) drop-shadow(0 4px 10px rgba(0,0,0,0.6));
+        margin-right: 6px;
+        vertical-align: -4px;
+        animation: chromeShift 8s ease-in-out infinite;
+    }
+    .works-lead em {
+        font-family: 'Space Mono', monospace;
+        font-style: italic;
+        font-weight: 700;
+        font-size: 0.92em;
+        letter-spacing: 1px;
+        color: var(--laser-halo);
+        text-shadow: 0 0 20px var(--laser-glow);
+    }
+
     .works-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -606,7 +265,7 @@
     .work-card {
         position: relative;
         background:
-            linear-gradient(135deg, rgba(255,255,255,0.045) 0%, transparent 40%, rgba(255,255,255,0.025) 100%),
+            linear-gradient(135deg, rgba(255,255,255,0.035) 0%, transparent 40%, rgba(255,110,70,0.02) 100%),
             var(--card);
         border: 1px solid var(--border);
         border-radius: var(--radius-lg);
@@ -634,15 +293,15 @@
         transform: translateY(-6px);
         box-shadow:
             0 24px 50px rgba(0, 0, 0, 0.78),
-            0 0 0 1px rgba(232, 239, 248, 0.18),
-            0 0 44px rgba(168, 222, 255, 0.18);
+            0 0 0 1px rgba(255, 200, 180, 0.18),
+            0 0 44px rgba(255, 100, 60, 0.18);
     }
-    .work-card:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
+    .work-card:focus-visible { outline: 2px solid var(--laser-halo); outline-offset: 3px; }
     .work-media {
         position: relative;
         aspect-ratio: 1 / 1;
         overflow: hidden;
-        background: #08090c;
+        background: #06070a;
     }
     .work-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
     .work-card:hover .work-media img { transform: scale(1.05); }
@@ -652,8 +311,8 @@
         position: absolute;
         inset: 0;
         background:
-            radial-gradient(circle 90px at 0% 0%, rgba(232, 239, 248, 0.45), transparent 65%),
-            radial-gradient(circle 100px at 100% 100%, rgba(168, 222, 255, 0.4), transparent 65%);
+            radial-gradient(circle 90px at 0% 0%, rgba(255, 200, 180, 0.45), transparent 65%),
+            radial-gradient(circle 100px at 100% 100%, rgba(255, 100, 60, 0.4), transparent 65%);
         opacity: 0;
         transition: opacity 0.55s;
         mix-blend-mode: screen;
@@ -667,8 +326,8 @@
         position: absolute;
         top: -10%; bottom: -10%; left: -8%;
         width: 2px;
-        background: linear-gradient(180deg, transparent, #A8DEFF, #fff, #A8DEFF, transparent);
-        box-shadow: 0 0 26px 8px rgba(168, 222, 255, 0.6);
+        background: linear-gradient(180deg, transparent, #FF6B4A, #fff, #FF6B4A, transparent);
+        box-shadow: 0 0 26px 8px rgba(255, 100, 60, 0.6);
         opacity: 0;
         z-index: 3;
         pointer-events: none;
@@ -705,7 +364,7 @@
         letter-spacing: 1.5px;
         padding: 5px 12px;
         border-radius: 40px;
-        box-shadow: 0 0 18px rgba(232, 239, 248, 0.4);
+        box-shadow: 0 0 18px rgba(255, 110, 70, 0.4);
         z-index: 4;
         text-shadow: 0 1px 0 rgba(255,255,255,0.55);
     }
@@ -724,7 +383,7 @@
     .var-btn {
         font-family: 'Space Mono', monospace;
         background: transparent;
-        border: 1px solid rgba(232, 239, 248, 0.18);
+        border: 1px solid rgba(255, 200, 180, 0.18);
         color: var(--soft);
         font-size: 0.52rem;
         font-weight: 600;
@@ -734,12 +393,12 @@
         cursor: pointer;
         transition: all 0.2s;
     }
-    .var-btn:hover { border-color: var(--white); color: var(--white); }
+    .var-btn:hover { border-color: var(--laser-halo); color: var(--laser-halo); }
     .var-btn.active {
         background: var(--chrome-btn);
-        border-color: var(--white);
+        border-color: var(--laser-halo);
         color: #07080b;
-        box-shadow: 0 0 18px rgba(232, 239, 248, 0.35);
+        box-shadow: 0 0 18px rgba(255, 110, 70, 0.35);
         text-shadow: 0 1px 0 rgba(255,255,255,0.55);
     }
 
@@ -754,7 +413,7 @@
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        filter: drop-shadow(0 0 16px rgba(168, 222, 255, 0.25));
+        filter: drop-shadow(0 0 16px rgba(255, 100, 60, 0.25));
     }
     .work-price span {
         font-family: 'Space Mono', monospace;
@@ -769,7 +428,7 @@
         grid-column: 1 / -1;
         padding: 46px 20px;
         text-align: center;
-        border: 1.5px dashed rgba(232, 239, 248, 0.25);
+        border: 1.5px dashed rgba(255, 200, 180, 0.25);
         border-radius: var(--radius-lg);
         font-family: 'Space Mono', monospace;
         font-size: 0.62rem;
@@ -778,9 +437,64 @@
         color: var(--muted);
     }
 
+    /* ═══════════ MARQUEE ═══════════ */
+    .marquee {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(180deg, #0a0c12 0%, #040507 100%);
+        border-top: 1px solid rgba(255, 200, 180, 0.22);
+        border-bottom: 1px solid rgba(255, 200, 180, 0.22);
+        padding: 26px 0;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+        mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+    }
+    .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marqueeScroll 46s linear infinite;
+        will-change: transform;
+    }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    @keyframes marqueeScroll {
+        from { transform: translate3d(0, 0, 0); }
+        to   { transform: translate3d(-50%, 0, 0); }
+    }
+    .marquee-content {
+        display: flex;
+        flex-shrink: 0;
+        gap: 64px;
+        padding-right: 64px;
+    }
+    .marquee-content span {
+        display: flex;
+        align-items: center;
+        gap: 64px;
+        white-space: nowrap;
+        font-family: 'Space Mono', monospace;
+        font-weight: 700;
+        font-size: clamp(0.85rem, 1.5vw, 1.15rem);
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        background: var(--chrome-grad);
+        background-size: 100% 200%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 20px rgba(255, 100, 60, 0.25));
+        animation: chromeShift 6s ease-in-out infinite;
+    }
+    .marquee-content span::after {
+        content: "✦";
+        background: none;
+        -webkit-text-fill-color: var(--laser-halo);
+        color: var(--laser-halo);
+        font-size: 0.75rem;
+        text-shadow: 0 0 14px var(--laser-glow);
+    }
+
     /* ═══════════ CÓMO ENCARGAR ═══════════ */
     #pedido {
-        padding: clamp(58px, 8vw, 100px) clamp(20px, 4vw, 60px);
+        padding: clamp(72px, 10vw, 128px) clamp(20px, 4vw, 60px);
         background: var(--deep);
         border-top: 1px solid var(--border);
         border-bottom: 1px solid var(--border);
@@ -791,85 +505,134 @@
         gap: clamp(14px, 2.4vw, 26px);
     }
     .step {
-        background: linear-gradient(135deg, rgba(255,255,255,0.035), transparent 60%), var(--card);
+        background: linear-gradient(135deg, rgba(255,110,70,0.04), transparent 60%), var(--card);
         border: 1px solid var(--border);
         border-radius: var(--radius-lg);
-        padding: 24px 22px;
-        transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+        padding: 26px 24px;
+        transition: border-color 0.25s, transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1), box-shadow 0.3s;
     }
     .step:hover {
-        border-color: rgba(232, 239, 248, 0.3);
-        transform: translateY(-3px);
-        box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 0 24px rgba(168, 222, 255, 0.12);
+        border-color: rgba(255, 200, 180, 0.35);
+        transform: translateY(-4px);
+        box-shadow: 0 16px 40px rgba(0,0,0,0.5), 0 0 30px rgba(255, 100, 60, 0.15);
     }
     .step-num {
         display: block;
         font-family: 'Bebas Neue', sans-serif;
-        font-size: 2.6rem;
+        font-size: 2.8rem;
         line-height: 1;
         background: var(--chrome-grad);
         background-size: 100% 200%;
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        margin-bottom: 12px;
-        filter: drop-shadow(0 0 22px rgba(168, 222, 255, 0.35));
+        margin-bottom: 14px;
+        filter: drop-shadow(0 0 22px rgba(255, 100, 60, 0.4));
     }
-    .step h3 { font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 8px; color: var(--white); }
-    .step p { font-size: 0.76rem; line-height: 1.65; color: var(--muted); }
+    .step h3 { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 8px; color: var(--white); }
+    .step p { font-size: 0.78rem; line-height: 1.7; color: var(--muted); }
     .step-note {
-        margin-top: 26px;
+        margin-top: 30px;
         display: flex;
         flex-wrap: wrap;
         align-items: baseline;
         gap: 10px;
-        padding: 16px 20px;
+        padding: 18px 22px;
         border-radius: var(--radius);
-        background: rgba(232, 239, 248, 0.05);
-        border: 1px solid rgba(232, 239, 248, 0.22);
-        font-size: 0.75rem;
+        background: rgba(255, 110, 70, 0.05);
+        border: 1px solid rgba(255, 200, 180, 0.25);
+        font-size: 0.78rem;
         color: var(--soft);
     }
     .step-note strong {
         font-family: 'Space Mono', monospace;
         font-style: italic;
-        font-size: 0.7rem;
+        font-size: 0.72rem;
         letter-spacing: 1px;
-        color: var(--white);
+        color: var(--laser-halo);
         text-shadow: 0 0 14px var(--laser-glow);
     }
 
     /* ═══════════ MATERIALES ═══════════ */
-    #materiales { padding: clamp(58px, 8vw, 100px) clamp(20px, 4vw, 60px); background: var(--charcoal); }
-    .size-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--card); }
-    .size-table-wrap table { width: 100%; min-width: 460px; border-collapse: collapse; font-size: 0.75rem; }
-    .size-table-wrap th {
-        font-family: 'Space Mono', monospace;
-        font-size: 0.55rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--muted);
-        background: #161a22;
-        text-align: left;
-        padding: 14px 18px;
-        border-bottom: 1px solid var(--border);
-        white-space: nowrap;
+    #materiales {
+        padding: clamp(72px, 10vw, 128px) clamp(20px, 4vw, 60px);
+        background:
+            radial-gradient(ellipse 700px 500px at 15% 15%, rgba(255, 110, 70, 0.06), transparent 60%),
+            var(--charcoal);
     }
-    .size-table-wrap td { padding: 14px 18px; border-bottom: 1px solid var(--border); color: var(--soft); }
-    .size-table-wrap td:first-child {
+    .materials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: clamp(12px, 1.8vw, 18px);
+    }
+    .material-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        min-height: clamp(140px, 16vw, 180px);
+        padding: clamp(22px, 2.8vw, 32px);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        background:
+            linear-gradient(160deg, rgba(255, 110, 70, 0.06), transparent 58%),
+            var(--card);
+        overflow: hidden;
+        transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.4, 1),
+                    border-color 0.35s,
+                    box-shadow 0.35s;
+    }
+    .material-card::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--laser-halo), #fff, var(--laser-halo), transparent);
+        opacity: 0;
+        transition: opacity 0.35s;
+    }
+    .material-card::after {
+        content: "";
+        position: absolute;
+        left: -30%; right: -30%; bottom: -70%;
+        height: 130%;
+        background: radial-gradient(ellipse at 50% 100%, rgba(255, 100, 60, 0.2), transparent 65%);
+        opacity: 0;
+        transition: opacity 0.45s;
+        pointer-events: none;
+    }
+    .material-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(255, 200, 180, 0.4);
+        box-shadow: 0 20px 44px rgba(0, 0, 0, 0.65), 0 0 40px rgba(255, 100, 60, 0.18);
+    }
+    .material-card:hover::before,
+    .material-card:hover::after { opacity: 1; }
+    .material-name {
+        position: relative;
+        z-index: 1;
         font-family: 'Bebas Neue', sans-serif;
-        font-size: 1.3rem;
-        letter-spacing: 1px;
+        font-size: clamp(1.4rem, 2.4vw, 1.95rem);
+        line-height: 1;
+        letter-spacing: 1.2px;
         color: var(--white);
-        text-shadow: 0 0 10px var(--laser-glow);
     }
-    .size-table-wrap tr:last-child td { border-bottom: none; }
-    .size-note { margin-top: 14px; font-size: 0.65rem; line-height: 1.6; color: var(--muted); }
+    .material-meta {
+        position: relative;
+        z-index: 1;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.58rem;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--laser-halo);
+        text-shadow: 0 0 12px var(--laser-glow);
+    }
 
     /* ═══════════ FOOTER ═══════════ */
     .site-footer {
         position: relative;
-        background: #07080b;
+        background: #040507;
         border-top: 1px solid var(--border);
         padding: 22px clamp(20px, 4vw, 40px);
     }
@@ -878,7 +641,7 @@
         position: absolute;
         top: 0; left: 0; right: 0;
         height: 1px;
-        background: linear-gradient(90deg, transparent, var(--white), var(--laser-halo), transparent);
+        background: linear-gradient(90deg, transparent, var(--laser-halo), #fff, var(--laser-halo), transparent);
         opacity: 0.55;
     }
     .footer-inner {
@@ -898,10 +661,14 @@
     .admin-dot {
         width: 11px; height: 11px;
         border-radius: 50%;
-        background: var(--white);
+        background: var(--laser-halo);
         box-shadow: 0 0 14px var(--laser-glow);
         animation: dotPulse 1.8s ease-in-out infinite;
         transition: transform 0.2s;
+    }
+    @keyframes dotPulse {
+        0%, 100% { opacity: 0.2; transform: scale(0.8); }
+        50%      { opacity: 1;   transform: scale(1.25); }
     }
     .admin-trigger:hover .admin-dot { transform: scale(1.25); box-shadow: 0 0 22px var(--laser-glow); }
 
@@ -920,18 +687,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: rgba(7, 8, 11, 0.85);
+        background: rgba(4, 5, 7, 0.85);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        border: 1.5px solid rgba(232, 239, 248, 0.32);
-        color: var(--white);
-        box-shadow: 0 0 22px rgba(168, 222, 255, 0.22);
+        border: 1.5px solid rgba(255, 200, 180, 0.32);
+        color: var(--laser-halo);
+        box-shadow: 0 0 22px rgba(255, 100, 60, 0.22);
         transition: all 0.22s;
     }
     .social-icon svg { width: 22px; height: 22px; fill: currentColor; filter: drop-shadow(0 0 8px var(--laser-glow)); }
     .social-icon:hover {
-        background: rgba(232, 239, 248, 0.12);
-        border-color: var(--white);
+        background: rgba(255, 110, 70, 0.12);
+        border-color: var(--laser-halo);
         box-shadow: 0 0 34px var(--laser-glow);
         transform: scale(1.06);
     }
@@ -957,11 +724,11 @@
         max-height: 90dvh;
         display: flex;
         flex-direction: column;
-        background: #0a0c11;
-        border: 1px solid rgba(232, 239, 248, 0.28);
+        background: #080a10;
+        border: 1px solid rgba(255, 200, 180, 0.28);
         border-radius: var(--radius-lg);
         overflow: hidden;
-        box-shadow: 0 0 80px rgba(168, 222, 255, 0.22), 0 0 0 1px rgba(232, 239, 248, 0.08);
+        box-shadow: 0 0 80px rgba(255, 100, 60, 0.22), 0 0 0 1px rgba(255, 200, 180, 0.08);
     }
     .lightbox-close {
         position: absolute; top: 10px; right: 12px;
@@ -969,13 +736,13 @@
         border-radius: 50%;
         background: rgba(0, 0, 0, 0.65);
         border: 1px solid var(--border);
-        color: var(--white);
+        color: var(--laser-halo);
         font-size: 1rem;
         line-height: 1;
         z-index: 3;
         transition: 0.2s;
     }
-    .lightbox-close:hover { border-color: var(--white); color: var(--white); box-shadow: 0 0 16px var(--laser-glow); }
+    .lightbox-close:hover { border-color: var(--laser-halo); color: var(--white); box-shadow: 0 0 16px var(--laser-glow); }
     .lightbox-top {
         display: flex;
         align-items: center;
@@ -993,7 +760,7 @@
         align-items: center;
         justify-content: center;
         padding: 14px;
-        background: #050608;
+        background: #030408;
     }
     .lightbox-img img { max-width: 100%; max-height: 58dvh; object-fit: contain; }
     .lightbox-bottom { display: flex; flex-direction: column; gap: 12px; padding: 16px 18px; border-top: 1px solid var(--border); }
@@ -1007,7 +774,7 @@
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        filter: drop-shadow(0 0 16px rgba(168, 222, 255, 0.25));
+        filter: drop-shadow(0 0 16px rgba(255, 100, 60, 0.25));
     }
     #lbVar { font-family: 'Space Mono', monospace; font-size: 0.62rem; letter-spacing: 2px; text-transform: uppercase; color: var(--soft); }
     #lbDesc { font-size: 0.75rem; line-height: 1.65; color: var(--soft); }
@@ -1022,26 +789,26 @@
         text-transform: uppercase;
         padding: 12px 26px;
         border-radius: 40px;
-        box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 0 26px rgba(232, 239, 248, 0.35);
+        box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 0 26px rgba(255, 110, 70, 0.35);
         transition: 0.22s;
         text-shadow: 0 1px 0 rgba(255,255,255,0.5);
     }
-    .lb-wa-btn:hover { box-shadow: 0 1px 0 rgba(255,255,255,0.75) inset, 0 0 46px rgba(232, 239, 248, 0.55); }
+    .lb-wa-btn:hover { box-shadow: 0 1px 0 rgba(255,255,255,0.75) inset, 0 0 46px rgba(255, 110, 70, 0.55); }
 
     /* ─── ADMIN ─── */
     .login-card {
         width: 100%; max-width: 380px;
         padding: 26px 24px;
-        background: #0a0c11;
-        border: 1px solid rgba(232, 239, 248, 0.28);
+        background: #080a10;
+        border: 1px solid rgba(255, 200, 180, 0.28);
         border-radius: var(--radius-lg);
     }
-    .login-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; letter-spacing: 1.5px; line-height: 1; margin-bottom: 6px; color: var(--white); }
+    .login-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; letter-spacing: 1.5px; line-height: 1; margin-bottom: 6px; color: var(--laser-halo); }
     .login-card p { font-size: 0.72rem; color: var(--muted); margin-bottom: 16px; }
     .login-error { display: none; margin-bottom: 12px; padding: 8px 12px; border-radius: 8px; font-family: 'Space Mono', monospace; font-size: 0.62rem; letter-spacing: 1px; }
     .login-error.show { display: block; }
     .login-error.error { background: rgba(255, 77, 77, 0.1); border: 1px solid rgba(255, 77, 77, 0.4); color: #ff8a8a; }
-    .login-error.info { background: var(--accent-soft); border: 1px solid rgba(232, 239, 248, 0.35); color: var(--white); }
+    .login-error.info { background: var(--accent-soft); border: 1px solid rgba(255, 200, 180, 0.35); color: var(--white); }
 
     .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
     .field label {
@@ -1052,7 +819,7 @@
         color: var(--muted);
     }
     .field input[type="text"], .field input[type="password"] {
-        background: #14161e;
+        background: #10131a;
         border: 1px solid var(--border);
         border-radius: 10px;
         padding: 11px 14px;
@@ -1064,8 +831,8 @@
         width: 100%;
     }
     .field input[type="text"]:focus, .field input[type="password"]:focus {
-        border-color: rgba(232, 239, 248, 0.6);
-        box-shadow: 0 0 0 3px rgba(232, 239, 248, 0.14);
+        border-color: rgba(255, 200, 180, 0.6);
+        box-shadow: 0 0 0 3px rgba(255, 110, 70, 0.14);
     }
 
     .form-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
@@ -1083,7 +850,7 @@
         text-shadow: 0 1px 0 rgba(255,255,255,0.55);
         box-shadow: 0 1px 0 rgba(255,255,255,0.55) inset;
     }
-    .btn-save:hover { box-shadow: 0 1px 0 rgba(255,255,255,0.7) inset, 0 0 28px rgba(232, 239, 248, 0.4); }
+    .btn-save:hover { box-shadow: 0 1px 0 rgba(255,255,255,0.7) inset, 0 0 28px rgba(255, 110, 70, 0.4); }
     .btn-cancel {
         border: 1px solid var(--border);
         color: var(--soft);
@@ -1095,31 +862,31 @@
         border-radius: 40px;
         transition: 0.2s;
     }
-    .btn-cancel:hover { border-color: rgba(232, 239, 248, 0.45); color: var(--white); }
+    .btn-cancel:hover { border-color: rgba(255, 200, 180, 0.45); color: var(--white); }
 
     .admin-panel {
         width: 100%; max-width: 1040px;
         max-height: 90dvh;
         overflow-y: auto;
         padding: 24px;
-        background: #0a0c11;
-        border: 1px solid rgba(232, 239, 248, 0.28);
+        background: #080a10;
+        border: 1px solid rgba(255, 200, 180, 0.28);
         border-radius: var(--radius-lg);
     }
     .admin-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
-    .admin-head h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; line-height: 1; letter-spacing: 1.5px; color: var(--white); }
+    .admin-head h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; line-height: 1; letter-spacing: 1.5px; color: var(--laser-halo); }
     .admin-head small { font-size: 0.65rem; color: var(--muted); }
     .admin-head-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
     .admin-status { display: none; margin-bottom: 14px; padding: 8px 12px; border-radius: 8px; font-family: 'Space Mono', monospace; font-size: 0.62rem; letter-spacing: 1px; }
     .admin-status.show { display: block; }
-    .admin-status.success { background: var(--accent-soft); border: 1px solid rgba(232, 239, 248, 0.4); color: var(--white); }
+    .admin-status.success { background: var(--accent-soft); border: 1px solid rgba(255, 200, 180, 0.4); color: var(--white); }
     .admin-status.error { background: rgba(255, 77, 77, 0.1); border: 1px solid rgba(255, 77, 77, 0.4); color: #ff8a8a; }
     .admin-status.info { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); color: var(--soft); }
 
     .admin-grid { display: grid; grid-template-columns: 360px 1fr; gap: 20px; align-items: start; }
     .admin-form-card { padding: 18px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); }
-    .admin-form-card h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 1px; line-height: 1; margin-bottom: 14px; color: var(--white); }
+    .admin-form-card h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 1px; line-height: 1; margin-bottom: 14px; color: var(--laser-halo); }
 
     .admin-price-box { margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
     .admin-price-box > label {
@@ -1134,7 +901,7 @@
     .admin-price-row { display: flex; gap: 8px; }
     .admin-price-row input {
         flex: 1; min-width: 0;
-        background: #14161e;
+        background: #10131a;
         border: 1px solid var(--border);
         border-radius: 10px;
         padding: 10px 12px;
@@ -1143,40 +910,8 @@
         font-size: 0.85rem;
         outline: none;
     }
-    .admin-price-row input:focus { border-color: rgba(232, 239, 248, 0.6); box-shadow: 0 0 0 3px rgba(232, 239, 248, 0.14); }
+    .admin-price-row input:focus { border-color: rgba(255, 200, 180, 0.6); box-shadow: 0 0 0 3px rgba(255, 110, 70, 0.14); }
     .admin-price-row .btn-save { padding: 10px 18px; }
-
-    .admin-flow-box { margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
-    .admin-flow-box > label {
-        display: block;
-        font-family: 'Space Mono', monospace;
-        font-size: 0.55rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--muted);
-        margin-bottom: 10px;
-    }
-    .admin-flow-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-    .admin-flow-slot { display: flex; flex-direction: column; cursor: pointer; }
-    .admin-flow-thumb {
-        aspect-ratio: 1 / 1;
-        border-radius: 8px;
-        overflow: hidden;
-        border: 1px dashed rgba(232, 239, 248, 0.32);
-        background: #14161e;
-        transition: 0.2s;
-    }
-    .admin-flow-slot:hover .admin-flow-thumb { border-color: var(--white); background: rgba(232, 239, 248, 0.05); }
-    .admin-flow-thumb img { width: 100%; height: 100%; object-fit: cover; }
-    .admin-flow-label {
-        text-align: center;
-        font-family: 'Space Mono', monospace;
-        font-size: 0.48rem;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        color: var(--muted);
-        margin-top: 6px;
-    }
 
     .upload-btn {
         display: flex;
@@ -1184,19 +919,19 @@
         justify-content: center;
         gap: 8px;
         padding: 14px;
-        border: 1.5px dashed rgba(232, 239, 248, 0.32);
+        border: 1.5px dashed rgba(255, 200, 180, 0.32);
         border-radius: 10px;
         font-family: 'Space Mono', monospace;
         font-size: 0.58rem;
         letter-spacing: 2px;
         text-transform: uppercase;
-        color: var(--white);
+        color: var(--laser-halo);
         cursor: pointer;
         text-align: center;
         transition: 0.2s;
     }
-    .upload-btn:hover { background: rgba(232, 239, 248, 0.06); }
-    .upload-btn.has-image { border-style: solid; background: rgba(232, 239, 248, 0.06); }
+    .upload-btn:hover { background: rgba(255, 110, 70, 0.06); }
+    .upload-btn.has-image { border-style: solid; background: rgba(255, 110, 70, 0.06); }
     .upload-btn svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
     #wFileStatus { display: block; margin-top: 6px; font-size: 0.58rem; line-height: 1.5; color: var(--muted); }
     .preview { display: none; margin-top: 10px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
@@ -1204,7 +939,7 @@
 
     .admin-list { display: flex; flex-direction: column; gap: 10px; }
     .admin-item { display: flex; align-items: center; gap: 12px; padding: 10px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); }
-    .admin-thumb { width: 54px; height: 54px; flex-shrink: 0; border-radius: 8px; overflow: hidden; background: #14161e; }
+    .admin-thumb { width: 54px; height: 54px; flex-shrink: 0; border-radius: 8px; overflow: hidden; background: #10131a; }
     .admin-thumb img { width: 100%; height: 100%; object-fit: cover; }
     .admin-item-info { flex: 1; min-width: 0; font-size: 0.72rem; }
     .admin-item-info strong {
@@ -1218,24 +953,24 @@
         white-space: nowrap;
         color: var(--white);
     }
-    .admin-item-info span { font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 1px; color: var(--white); text-shadow: 0 0 8px var(--laser-glow); }
+    .admin-item-info span { font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 1px; color: var(--laser-halo); text-shadow: 0 0 8px var(--laser-glow); }
     .admin-item-actions { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
     .admin-item-actions button {
         width: 28px; height: 28px;
         border-radius: 8px;
-        background: #171a22;
+        background: #141720;
         border: 1px solid var(--border);
         color: var(--soft);
         font-size: 0.65rem;
         transition: 0.18s;
     }
-    .admin-item-actions button:hover:not(:disabled) { border-color: rgba(232, 239, 248, 0.55); color: var(--white); }
+    .admin-item-actions button:hover:not(:disabled) { border-color: rgba(255, 200, 180, 0.55); color: var(--laser-halo); }
     .admin-item-actions button:disabled { opacity: 0.28; cursor: not-allowed; }
     .admin-item-actions .btn-edit { width: auto; padding: 0 10px; font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 1px; }
     .admin-item-actions .btn-del:hover { color: #ff8a8a; border-color: rgba(255, 77, 77, 0.55); }
     .admin-empty { padding: 22px; text-align: center; border: 1px dashed var(--border); border-radius: var(--radius); font-family: 'Space Mono', monospace; font-size: 0.62rem; letter-spacing: 1px; color: var(--muted); }
 
-    .confirm-card { width: 100%; max-width: 400px; padding: 28px 24px; text-align: center; background: #0a0c11; border: 1px solid rgba(232, 239, 248, 0.28); border-radius: var(--radius-lg); }
+    .confirm-card { width: 100%; max-width: 400px; padding: 28px 24px; text-align: center; background: #080a10; border: 1px solid rgba(255, 200, 180, 0.28); border-radius: var(--radius-lg); }
     .confirm-icon { width: 52px; height: 52px; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255, 77, 77, 0.1); border: 1px solid rgba(255, 77, 77, 0.35); color: #ff8a8a; }
     .confirm-icon svg { width: 22px; height: 22px; fill: currentColor; }
     .confirm-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 1px; line-height: 1; margin-bottom: 10px; color: var(--white); }
@@ -1243,34 +978,24 @@
     .confirm-actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
     .confirm-btn { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; padding: 11px 22px; border-radius: 40px; transition: 0.2s; }
     .confirm-btn-cancel { border: 1px solid var(--border); color: var(--soft); }
-    .confirm-btn-cancel:hover { border-color: rgba(232, 239, 248, 0.45); color: var(--white); }
+    .confirm-btn-cancel:hover { border-color: rgba(255, 200, 180, 0.45); color: var(--white); }
     .confirm-btn-danger { background: var(--danger); color: #1a0000; font-weight: 700; }
     .confirm-btn-danger:hover { background: #ff6b6b; }
 
-    .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.9s cubic-bezier(0.2, 0.9, 0.4, 1), transform 0.9s cubic-bezier(0.2, 0.9, 0.4, 1); }
     .reveal.in { opacity: 1; transform: translateY(0); }
     @media (prefers-reduced-motion: reduce) {
         .reveal { opacity: 1; transform: none; transition: none; }
-        .hero::after, .logo-word, .spark, .marquee-track, .marquee-content span { animation: none !important; }
         .work-card:hover .work-media::before { animation: none; opacity: .4; }
     }
 
     /* ═══════════ RESPONSIVE ═══════════ */
-    @media (max-width: 900px) {
-        .flow-step-placeholder,
-        .flow-grid > .flow-connector:nth-last-child(2) { display: none; }
-        .flow-grid { grid-template-columns: 1fr auto 1fr auto 1fr; }
-    }
     @media (max-width: 780px) {
         .admin-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 720px) {
-        .flow-grid { grid-template-columns: 1fr; max-width: 300px; margin-left: auto; margin-right: auto; gap: 18px; }
-        .flow-connector { display: none; }
-        .hero-flow { max-width: 300px; margin-left: auto; margin-right: auto; }
         .section-desc { text-align: left; }
-        .cnc-stage { max-width: 100%; }
-        .cnc-corner { font-size: 0.48rem; }
+        .hero-laser { width: min(88vw, 50vh); }
     }
     @media (max-width: 640px) {
         .footer-inner { flex-direction: column; align-items: flex-start; }
@@ -1281,10 +1006,10 @@
         .lightbox-img img { max-height: 46dvh; }
         .lightbox-top { padding: 14px 52px 14px 14px; }
         .lightbox-bottom { padding: 14px; }
-        .marquee { padding: 20px 0; }
+        .marquee { padding: 18px 0; }
         .marquee-content { gap: 44px; padding-right: 44px; }
         .marquee-content span { gap: 44px; letter-spacing: 3.5px; }
-        .hero::before { inset: 12px; }
+        .brand-name { letter-spacing: 0.2em; padding-left: 0.2em; }
     }
     @media (max-width: 560px) {
         .admin-head { flex-direction: column; align-items: stretch; }
@@ -1296,11 +1021,13 @@
         .form-actions button { width: 100%; }
         .upload-btn { padding: 12px; font-size: 0.55rem; }
         #wFileStatus { font-size: 0.55rem; }
+        .materials-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 400px) {
         .admin-panel { padding: 16px; }
         .admin-form-card { padding: 14px; }
         .admin-thumb { width: 44px; height: 44px; }
+        .materials-grid { grid-template-columns: 1fr; }
     }
 
     /* ═══════════ AMBIENT FX ═══════════ */
@@ -1311,12 +1038,12 @@
     .mm-cursor {
         position: fixed; top: 0; left: 0;
         width: 18px; height: 18px;
-        border: 1.5px solid var(--white);
+        border: 1.5px solid var(--laser-halo);
         border-radius: 50%;
         pointer-events: none;
         z-index: 9999;
         background: transparent;
-        box-shadow: 0 0 14px var(--laser-glow), inset 0 0 8px rgba(168, 222, 255, 0.3);
+        box-shadow: 0 0 14px var(--laser-glow), inset 0 0 8px rgba(255, 100, 60, 0.3);
         opacity: 0;
         transition: width 0.22s cubic-bezier(0.22, 0.61, 0.36, 1),
                     height 0.22s cubic-bezier(0.22, 0.61, 0.36, 1),
@@ -1328,7 +1055,7 @@
     .mm-cursor::before, .mm-cursor::after {
         content: "";
         position: absolute;
-        background: var(--white);
+        background: var(--laser-halo);
         box-shadow: 0 0 10px var(--laser-glow);
         opacity: .9;
         transition: opacity .2s;
@@ -1338,8 +1065,8 @@
     .mm-cursor.is-active { opacity: 1; }
     .mm-cursor.is-hot {
         width: 46px; height: 46px;
-        background: rgba(232, 239, 248, 0.08);
-        box-shadow: 0 0 30px var(--laser-glow), inset 0 0 18px rgba(168, 222, 255, 0.22);
+        background: rgba(255, 110, 70, 0.08);
+        box-shadow: 0 0 30px var(--laser-glow), inset 0 0 18px rgba(255, 100, 60, 0.22);
     }
     .mm-cursor.is-hot::before, .mm-cursor.is-hot::after { opacity: 0; }
 
@@ -1354,66 +1081,250 @@
 <canvas class="mm-fx-particles" id="mm-fx-particles" aria-hidden="true"></canvas>
 <div class="mm-cursor" id="mm-cursor" aria-hidden="true"></div>
 
-<!-- ═══════════ HERO ═══════════ -->
-<section class="hero">
-    <div class="hero-inner">
-        <div class="hero-kicker">
-            <span class="live"></span>
-            Artista · <b>Damián / Grabado Láser</b>
-        </div>
+<!-- ═══════════ HERO — BRAND + LASER REVEAL ═══════════ -->
+<section class="hero" aria-label="Damián Núñez — GAMBITO LÁSER">
 
-        <div class="hero-brand">
-            <h1 class="logo">
-                <span class="logo-word">GAMBITO</span>
-                <span class="logo-sub">LÁSER</span>
-            </h1>
-        </div>
-
-        <p class="hero-tags">
-            Tarjetas de colección <i>·</i> Trabajos personalizados <i>·</i> Grabado láser CNC
-        </p>
-
-        <p class="hero-lead">
-            <strong>GRABAMOS</strong> con luz: el láser quema el trazo y lo deja marcado
-            para siempre en el metal, la madera o el cuero. Piezas de colección, placas
-            y encargos personalizados, hechos uno por uno en <em>Venado Tuerto</em>.
-        </p>
-
-        <div class="hero-ctas">
-            <a href="#trabajos" class="btn-primary">Ver piezas</a>
-            <a href="#cnc" class="btn-ghost">Ver el taller</a>
-        </div>
-
-        <div class="hero-flow">
-            <p class="flow-eyebrow">Del vector a la pieza marcada</p>
-            <div class="flow-grid">
-                <div class="flow-step">
-                    <div class="flow-head"><span class="flow-num">01</span><span class="flow-label">Boceto</span></div>
-                    <div class="flow-media"><img id="flowImg1" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Boceto del diseño" loading="lazy" decoding="async"></div>
-                    <p class="flow-desc">Vectorizamos la idea, la tipografía y el trazo exacto.</p>
-                </div>
-                <div class="flow-connector"><span></span><span></span><span></span></div>
-                <div class="flow-step">
-                    <div class="flow-head"><span class="flow-num">02</span><span class="flow-label">Grabado</span></div>
-                    <div class="flow-media"><img id="flowImg2" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Grabado láser" loading="lazy" decoding="async"></div>
-                    <p class="flow-desc">El haz quema el material con precisión de décimas de milímetro.</p>
-                </div>
-                <div class="flow-connector"><span></span><span></span><span></span></div>
-                <div class="flow-step">
-                    <div class="flow-head"><span class="flow-num">03</span><span class="flow-label">Acabado</span></div>
-                    <div class="flow-media"><img id="flowImg3" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Acabado final" loading="lazy" decoding="async"></div>
-                    <p class="flow-desc">Pulido, anodizado o sellado. La pieza sale lista para durar.</p>
-                </div>
-                <div class="flow-connector"><span></span><span></span><span></span></div>
-                <a class="flow-step flow-step-placeholder"
-                   href="https://wa.me/543462415932?text=Hola%20GAMBITO%20L%C3%81SER%2C%20quiero%20encargar%20una%20pieza."
-                   target="_blank" rel="noopener noreferrer" aria-label="Encargá tu pieza">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5z"/></svg>
-                    <span>Encargá tu pieza</span>
-                </a>
-            </div>
-        </div>
+    <div class="brand-mark">
+        <span class="brand-name">Damián Núñez</span>
     </div>
+
+    <svg class="hero-laser" viewBox="0 0 900 900" aria-hidden="true">
+        <defs>
+            <radialGradient id="haloRed">
+                <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.95"/>
+                <stop offset="22%"  stop-color="#ffddaa" stop-opacity="0.7"/>
+                <stop offset="48%"  stop-color="#ff3322" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#550000" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="coreRed">
+                <stop offset="0%"   stop-color="#ffffff"/>
+                <stop offset="35%"  stop-color="#ffddaa"/>
+                <stop offset="100%" stop-color="#ff2200" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="beamRed" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%"   stop-color="#cc0000" stop-opacity="0"/>
+                <stop offset="18%"  stop-color="#ff2020" stop-opacity="0.55"/>
+                <stop offset="50%"  stop-color="#ffffff"/>
+                <stop offset="82%"  stop-color="#ff2020" stop-opacity="0.55"/>
+                <stop offset="100%" stop-color="#cc0000" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="edgeRed" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
+                <stop offset="34%"  stop-color="#ff4422" stop-opacity="0"/>
+                <stop offset="42%"  stop-color="#ff4422" stop-opacity="0.55"/>
+                <stop offset="50%"  stop-color="#ffffff"/>
+                <stop offset="58%"  stop-color="#cc0022" stop-opacity="0.55"/>
+                <stop offset="66%"  stop-color="#ff4422" stop-opacity="0"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+            </linearGradient>
+            <filter id="headGlow" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur stdDeviation="2" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="traceGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="3" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="beamBlur" x="-80%" y="-80%" width="260%" height="260%">
+                <feGaussianBlur stdDeviation="6"/>
+            </filter>
+            <filter id="imgGlow" x="-10%" y="-10%" width="120%" height="120%">
+                <feGaussianBlur stdDeviation="1.5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+
+            <mask id="revealMask" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="900">
+                <polygon fill="white">
+                    <animate attributeName="points"
+                        values="0,0 0,0 0,0; 0,0 0,0 0,0; 0,0 493,0 0,493; 0,0 1397,0 0,1397; 0,0 1800,0 0,1800; 0,0 1800,0 0,1800; 0,0 0,0 0,0"
+                        keyTimes="0; 0.10; 0.14; 0.88; 0.94; 0.98; 1"
+                        calcMode="linear"
+                        dur="5s" repeatCount="indefinite"/>
+                </polygon>
+            </mask>
+        </defs>
+
+        <!-- ═══ LOGO REVEALED BY DIAGONAL MASK ═══ -->
+        <g mask="url(#revealMask)">
+            <animate attributeName="opacity"
+                values="1; 1; 1; 0; 0"
+                keyTimes="0; 0.94; 0.96; 0.99; 1"
+                calcMode="linear"
+                dur="5s" repeatCount="indefinite"/>
+            <image href="https://i.postimg.cc/7ZGWZMVZ/gambito22.png"
+                   x="50" y="50" width="800" height="800"
+                   preserveAspectRatio="xMidYMid meet"
+                   filter="url(#imgGlow)"/>
+        </g>
+
+        <!-- ═══ LEADING EDGE — hot burn line ═══ -->
+        <g filter="url(#traceGlow)" opacity="0">
+            <animate attributeName="opacity"
+                values="0; 0; 1; 1; 1; 0; 0"
+                keyTimes="0; 0.10; 0.13; 0.88; 0.92; 0.95; 1"
+                calcMode="linear"
+                dur="5s" repeatCount="indefinite"/>
+            <line stroke="url(#edgeRed)" stroke-width="3" stroke-linecap="round">
+                <animate attributeName="x1" values="0; 0; 493; 1397; 1800; 1800; 0"
+                    keyTimes="0; 0.10; 0.14; 0.88; 0.94; 0.98; 1"
+                    calcMode="linear" dur="5s" repeatCount="indefinite"/>
+                <animate attributeName="y1" values="0; 0; 0; 0; 0; 0; 0"
+                    keyTimes="0; 0.10; 0.14; 0.88; 0.94; 0.98; 1"
+                    dur="5s" repeatCount="indefinite"/>
+                <animate attributeName="x2" values="0; 0; 0; 0; 0; 0; 0"
+                    keyTimes="0; 0.10; 0.14; 0.88; 0.94; 0.98; 1"
+                    dur="5s" repeatCount="indefinite"/>
+                <animate attributeName="y2" values="0; 0; 493; 1397; 1800; 1800; 0"
+                    keyTimes="0; 0.10; 0.14; 0.88; 0.94; 0.98; 1"
+                    calcMode="linear" dur="5s" repeatCount="indefinite"/>
+            </line>
+        </g>
+
+        <!-- ═══ LASER HEAD ═══ -->
+        <g opacity="0" filter="url(#headGlow)">
+            <animate attributeName="opacity"
+                values="0; 0; 1; 1; 1; 0; 0"
+                keyTimes="0; 0.10; 0.13; 0.88; 0.92; 0.95; 1"
+                calcMode="linear"
+                dur="5s" repeatCount="indefinite"/>
+
+            <animateMotion dur="5s" repeatCount="indefinite"
+                path="M 0 0 L 900 900"
+                keyPoints="0; 0; 0.274; 0.776; 1; 1; 0"
+                keyTimes="0; 0.10; 0.14; 0.88; 0.94; 0.98; 1"
+                calcMode="linear"/>
+
+            <g>
+                <animateTransform attributeName="transform" type="translate"
+                    values="0,0; 1.2,-0.5; -0.7,0.9; 0.4,-1; -0.9,0.3; 0,0"
+                    dur="0.38s" repeatCount="indefinite" calcMode="linear"/>
+
+                <g>
+                    <animateTransform attributeName="transform" type="rotate"
+                        values="-45; -43.5; -46.5; -44; -46; -45"
+                        dur="0.55s" repeatCount="indefinite" calcMode="linear"/>
+
+                    <g>
+                        <animate attributeName="opacity"
+                            values="0; 0; 0.5; 0.6; 0.5; 0.55; 0.5; 0.6; 0.4; 0"
+                            keyTimes="0; 0.10; 0.14; 0.25; 0.40; 0.55; 0.70; 0.82; 0.88; 0.92"
+                            calcMode="linear" dur="5s" repeatCount="indefinite"/>
+                        <line x1="-300" y1="0" x2="300" y2="0"
+                              stroke="#ff2200" stroke-width="16"
+                              filter="url(#beamBlur)" stroke-linecap="round"/>
+                    </g>
+
+                    <line x1="-280" y1="0" x2="280" y2="0"
+                          stroke="#880000" stroke-width="8"
+                          opacity="0.4" stroke-linecap="round"
+                          filter="url(#beamBlur)">
+                        <animate attributeName="x1"
+                            values="-280; -305; -265; -300; -275; -310; -270; -300; -280"
+                            dur="0.38s" repeatCount="indefinite" calcMode="linear"/>
+                        <animate attributeName="x2"
+                            values="280; 305; 265; 300; 275; 310; 270; 300; 280"
+                            dur="0.32s" repeatCount="indefinite" calcMode="linear"/>
+                        <animate attributeName="stroke-width"
+                            values="8; 16; 10; 18; 9; 17; 11; 8"
+                            keyTimes="0; 0.14; 0.25; 0.40; 0.55; 0.70; 0.82; 0.88"
+                            calcMode="linear" dur="5s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity"
+                            values="0.4;0.65;0.35;0.7;0.32;0.68;0.38;0.65;0.4"
+                            dur="0.16s" repeatCount="indefinite" calcMode="linear"/>
+                    </line>
+
+                    <line x1="-280" y1="0" x2="280" y2="0"
+                          stroke="url(#beamRed)" stroke-width="2.2"
+                          stroke-linecap="round">
+                        <animate attributeName="x1"
+                            values="-280; -305; -265; -300; -275; -310; -270; -300; -280"
+                            dur="0.38s" repeatCount="indefinite" calcMode="linear"/>
+                        <animate attributeName="x2"
+                            values="280; 305; 265; 300; 275; 310; 270; 300; 280"
+                            dur="0.32s" repeatCount="indefinite" calcMode="linear"/>
+                        <animate attributeName="stroke-width"
+                            values="2.2; 5.5; 3; 6.5; 3; 6; 3.5; 2.2"
+                            keyTimes="0; 0.14; 0.25; 0.40; 0.55; 0.70; 0.82; 0.88"
+                            calcMode="linear" dur="5s" repeatCount="indefinite"/>
+                    </line>
+
+                    <line x1="-280" y1="0" x2="280" y2="0"
+                          stroke="#ffeedd" stroke-width="0.8"
+                          opacity="0.9" stroke-linecap="round">
+                        <animate attributeName="x1"
+                            values="-280; -305; -265; -300; -275; -310; -270; -300; -280"
+                            dur="0.38s" repeatCount="indefinite" calcMode="linear"/>
+                        <animate attributeName="x2"
+                            values="280; 305; 265; 300; 275; 310; 270; 300; 280"
+                            dur="0.32s" repeatCount="indefinite" calcMode="linear"/>
+                        <animate attributeName="opacity"
+                            values="0.9;0.5;0.95;0.55;0.88;0.5;0.95;0.65;0.9"
+                            dur="0.14s" repeatCount="indefinite" calcMode="linear"/>
+                    </line>
+                </g>
+
+                <circle r="152" fill="url(#haloRed)" opacity="0.18"/>
+                <circle r="68"  fill="url(#haloRed)" opacity="0.5"/>
+                <circle r="24"  fill="url(#coreRed)"/>
+
+                <!-- ═══ SPARKS ═══ -->
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; 22,-58" dur="0.55s" begin="0s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.5" fill="#ffffff"><animate attributeName="r" values="1.5;1.5;0.1" keyTimes="0;0.15;1" dur="0.55s" begin="0s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="0.55s" begin="0s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; 62,-22" dur="0.6s" begin="-0.045s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.3" fill="#ffddaa"><animate attributeName="r" values="1.3;1.3;0.08" keyTimes="0;0.15;1" dur="0.6s" begin="-0.045s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="0.6s" begin="-0.045s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; 54,34" dur="0.58s" begin="-0.09s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.4" fill="#ff8844"><animate attributeName="r" values="1.4;1.4;0.08" keyTimes="0;0.15;1" dur="0.58s" begin="-0.09s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="0.58s" begin="-0.09s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; 8,66" dur="0.62s" begin="-0.135s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.2" fill="#ff3322"><animate attributeName="r" values="1.2;1.2;0.07" keyTimes="0;0.15;1" dur="0.62s" begin="-0.135s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="0.62s" begin="-0.135s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; -42,52" dur="0.55s" begin="-0.18s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.6" fill="#ffffff"><animate attributeName="r" values="1.6;1.6;0.1" keyTimes="0;0.15;1" dur="0.55s" begin="-0.18s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="0.55s" begin="-0.18s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; -68,12" dur="0.6s" begin="-0.225s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.3" fill="#ffddaa"><animate attributeName="r" values="1.3;1.3;0.08" keyTimes="0;0.15;1" dur="0.6s" begin="-0.225s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="0.6s" begin="-0.225s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; -52,-38" dur="0.58s" begin="-0.27s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.4" fill="#ff5533"><animate attributeName="r" values="1.4;1.4;0.08" keyTimes="0;0.15;1" dur="0.58s" begin="-0.27s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="0.58s" begin="-0.27s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; -12,-66" dur="0.62s" begin="-0.315s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.2" fill="#cc0022"><animate attributeName="r" values="1.2;1.2;0.07" keyTimes="0;0.15;1" dur="0.62s" begin="-0.315s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="0.62s" begin="-0.315s" repeatCount="indefinite"/></circle></g>
+
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; 75,-95" dur="1s" begin="0s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.2" fill="#ffffff"><animate attributeName="r" values="1.2;1.2;0.07" keyTimes="0;0.15;1" dur="1s" begin="0s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1s" begin="0s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; 118,-48" dur="1.05s" begin="-0.055s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.0" fill="#ffddaa"><animate attributeName="r" values="1.0;1.0;0.06" keyTimes="0;0.15;1" dur="1.05s" begin="-0.055s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.05s" begin="-0.055s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; 130,22" dur="0.95s" begin="-0.11s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.1" fill="#ff4422"><animate attributeName="r" values="1.1;1.1;0.07" keyTimes="0;0.15;1" dur="0.95s" begin="-0.11s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="0.95s" begin="-0.11s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; 88,82" dur="1.08s" begin="-0.165s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="0.9" fill="#cc0022"><animate attributeName="r" values="0.9;0.9;0.05" keyTimes="0;0.15;1" dur="1.08s" begin="-0.165s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.08s" begin="-0.165s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; 28,118" dur="1s" begin="-0.22s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.3" fill="#ffffff"><animate attributeName="r" values="1.3;1.3;0.08" keyTimes="0;0.15;1" dur="1s" begin="-0.22s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1s" begin="-0.22s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; -52,108" dur="1.05s" begin="-0.275s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.1" fill="#ffaa77"><animate attributeName="r" values="1.1;1.1;0.07" keyTimes="0;0.15;1" dur="1.05s" begin="-0.275s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.05s" begin="-0.275s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; -108,72" dur="0.95s" begin="-0.33s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.0" fill="#ff5533"><animate attributeName="r" values="1.0;1.0;0.06" keyTimes="0;0.15;1" dur="0.95s" begin="-0.33s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="0.95s" begin="-0.33s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; -130,12" dur="1.08s" begin="-0.385s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.2" fill="#cc0022"><animate attributeName="r" values="1.2;1.2;0.07" keyTimes="0;0.15;1" dur="1.08s" begin="-0.385s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.08s" begin="-0.385s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; -108,-58" dur="1s" begin="-0.44s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="0.9" fill="#ffffff"><animate attributeName="r" values="0.9;0.9;0.05" keyTimes="0;0.15;1" dur="1s" begin="-0.44s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1s" begin="-0.44s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; -58,-105" dur="1.05s" begin="-0.495s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.1" fill="#ffddaa"><animate attributeName="r" values="1.1;1.1;0.07" keyTimes="0;0.15;1" dur="1.05s" begin="-0.495s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.05s" begin="-0.495s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; 12,-128" dur="0.95s" begin="-0.55s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.3" fill="#ff4422"><animate attributeName="r" values="1.3;1.3;0.08" keyTimes="0;0.15;1" dur="0.95s" begin="-0.55s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="0.95s" begin="-0.55s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; 82,-88" dur="1.08s" begin="-0.605s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.0" fill="#cc0000"><animate attributeName="r" values="1.0;1.0;0.06" keyTimes="0;0.15;1" dur="1.08s" begin="-0.605s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.08s" begin="-0.605s" repeatCount="indefinite"/></circle></g>
+
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; 28,-168" dur="1.5s" begin="0s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="0.9" fill="#ffffff"><animate attributeName="r" values="0.9;0.9;0.05" keyTimes="0;0.15;1" dur="1.5s" begin="0s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.5s" begin="0s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; 158,-52" dur="1.45s" begin="-0.08s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="0.8" fill="#ffddaa"><animate attributeName="r" values="0.8;0.8;0.05" keyTimes="0;0.15;1" dur="1.45s" begin="-0.08s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.45s" begin="-0.08s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; 182,42" dur="1.55s" begin="-0.16s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.0" fill="#ff4422"><animate attributeName="r" values="1.0;1.0;0.06" keyTimes="0;0.15;1" dur="1.55s" begin="-0.16s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.55s" begin="-0.16s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; 98,142" dur="1.4s" begin="-0.24s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="0.8" fill="#cc0022"><animate attributeName="r" values="0.8;0.8;0.05" keyTimes="0;0.15;1" dur="1.4s" begin="-0.24s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.4s" begin="-0.24s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; -12,178" dur="1.5s" begin="-0.32s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="0.9" fill="#ffffff"><animate attributeName="r" values="0.9;0.9;0.05" keyTimes="0;0.15;1" dur="1.5s" begin="-0.32s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.5s" begin="-0.32s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; -108,142" dur="1.45s" begin="-0.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.0" fill="#ffaa77"><animate attributeName="r" values="1.0;1.0;0.06" keyTimes="0;0.15;1" dur="1.45s" begin="-0.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.45s" begin="-0.4s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; -168,68" dur="1.55s" begin="-0.48s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="0.8" fill="#ff5533"><animate attributeName="r" values="0.8;0.8;0.05" keyTimes="0;0.15;1" dur="1.55s" begin="-0.48s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.55s" begin="-0.48s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; -182,-42" dur="1.4s" begin="-0.56s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="0.9" fill="#cc0000"><animate attributeName="r" values="0.9;0.9;0.05" keyTimes="0;0.15;1" dur="1.4s" begin="-0.56s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.4s" begin="-0.56s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; -142,-118" dur="1.5s" begin="-0.64s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.0" fill="#ffffff"><animate attributeName="r" values="1.0;1.0;0.06" keyTimes="0;0.15;1" dur="1.5s" begin="-0.64s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.5s" begin="-0.64s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; -58,-168" dur="1.45s" begin="-0.72s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="0.8" fill="#ffddaa"><animate attributeName="r" values="0.8;0.8;0.05" keyTimes="0;0.15;1" dur="1.45s" begin="-0.72s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.45s" begin="-0.72s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; 88,-158" dur="1.55s" begin="-0.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="0.9" fill="#ff4422"><animate attributeName="r" values="0.9;0.9;0.05" keyTimes="0;0.15;1" dur="1.55s" begin="-0.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.55s" begin="-0.8s" repeatCount="indefinite"/></circle></g>
+                <g><animateTransform attributeName="transform" type="translate" values="0,0; 148,-98" dur="1.4s" begin="-0.88s" repeatCount="indefinite" calcMode="spline" keySplines="0.15 0.6 0.35 1"/><circle r="1.0" fill="#cc0022"><animate attributeName="r" values="1.0;1.0;0.06" keyTimes="0;0.15;1" dur="1.4s" begin="-0.88s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0.75;0" keyTimes="0;0.15;0.6;1" dur="1.4s" begin="-0.88s" repeatCount="indefinite"/></circle></g>
+            </g>
+        </g>
+    </svg>
+</section>
+
+<!-- ═══════════ TRABAJOS — GRABAMOS + PIEZAS ═══════════ -->
+<section id="trabajos">
+    <p class="works-lead reveal">
+        <strong>GRABAMOS</strong> con luz: el láser quema el trazo y lo deja marcado
+        para siempre en el metal, la madera o el cuero. Piezas de colección, placas
+        y encargos personalizados, hechos uno por uno en <em>Venado Tuerto</em>.
+    </p>
+
+    <div class="section-head reveal">
+        <div>
+            <p class="eyebrow">// Catálogo</p>
+            <h2 class="section-title">PIEZAS <em>2026</em></h2>
+        </div>
+        <p class="section-desc">
+            Series activas del taller. Elegí el material y tocá una pieza para ver el detalle.
+        </p>
+    </div>
+    <div class="works-grid" id="worksGrid"></div>
 </section>
 
 <!-- ═══════════ MARQUEE ═══════════ -->
@@ -1435,140 +1346,6 @@
         </div>
     </div>
 </div>
-
-<!-- ═══════════ CNC SHOWCASE ═══════════ -->
-<section id="cnc">
-    <div class="section-head reveal">
-        <div>
-            <p class="eyebrow">// Taller CNC</p>
-            <h2 class="section-title">LA MANO <em>máquina</em></h2>
-        </div>
-        <p class="section-desc">
-            Un solo haz. Un solo trazo. Cada corte es exacto, cada pieza es única.
-        </p>
-    </div>
-
-    <div class="cnc-stage reveal">
-        <span class="cnc-corner tl">X <b>+ 200.00</b><br>Y <b>+ 145.50</b></span>
-        <span class="cnc-corner tr">VEL <b>800 mm/s</b><br>POT <b>65 %</b></span>
-        <span class="cnc-corner bl">MAT <b>ALUMINIO</b><br>PAS <b>04</b></span>
-        <span class="cnc-corner br">ENGRAVE <b>v3.1</b><br>GAMBITO · <b>2026</b></span>
-
-        <svg class="cnc-showcase" id="cncSvg" viewBox="0 0 900 900" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-            <defs>
-                <linearGradient id="chromeStroke" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
-                    <stop offset="35%" stop-color="#a8b0bd" stop-opacity="0.3"/>
-                    <stop offset="55%" stop-color="#ffffff" stop-opacity="0.9"/>
-                    <stop offset="100%" stop-color="#78849" stop-opacity="0.45"/>
-                </linearGradient>
-                <radialGradient id="glowOuter" cx="0.5" cy="0.5" r="0.5">
-                    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
-                    <stop offset="35%" stop-color="#A8DEFF" stop-opacity="0.55"/>
-                    <stop offset="100%" stop-color="#A8DEFF" stop-opacity="0"/>
-                </radialGradient>
-                <radialGradient id="glowInner" cx="0.5" cy="0.5" r="0.5">
-                    <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
-                    <stop offset="60%" stop-color="#e6f5ff" stop-opacity="0.9"/>
-                    <stop offset="100%" stop-color="#A8DEFF" stop-opacity="0"/>
-                </radialGradient>
-                <radialGradient id="flashGrad" cx="0.5" cy="0.5" r="0.5">
-                    <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
-                    <stop offset="30%" stop-color="#e6f5ff" stop-opacity="0.9"/>
-                    <stop offset="65%" stop-color="#A8DEFF" stop-opacity="0.4"/>
-                    <stop offset="100%" stop-color="#A8DEFF" stop-opacity="0"/>
-                </radialGradient>
-                <filter id="strongGlow" x="-80%" y="-80%" width="260%" height="260%">
-                    <feGaussianBlur stdDeviation="3" result="b"/>
-                    <feMerge>
-                        <feMergeNode in="b"/>
-                        <feMergeNode in="b"/>
-                        <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                </filter>
-            </defs>
-
-            <!-- Ghost chrome outline -->
-            <path
-                d="M 200 200 Q 200 180 220 180 L 680 180 Q 700 180 700 200 L 700 700 Q 700 720 680 720 L 220 720 Q 200 720 200 700 Z M 220 200 L 680 200 L 680 700 L 220 700 Z M 220 200 L 232 212 L 220 224 L 208 212 Z M 680 200 L 692 212 L 680 224 L 668 212 Z M 680 700 L 692 688 L 680 676 L 668 688 Z M 220 700 L 232 688 L 220 676 L 208 688 Z M 450 250 C 380 320 320 390 320 450 C 320 495 355 520 395 500 C 390 530 375 560 345 585 L 555 585 C 525 560 510 530 505 500 C 545 520 580 495 580 450 C 580 390 520 320 450 250 Z M 450 300 C 400 355 355 405 355 450 C 355 480 385 498 410 483 C 405 505 395 525 375 545 L 525 545 C 505 525 495 505 490 483 C 515 498 545 480 545 450 C 545 405 500 355 450 300 Z M 435 385 L 435 425 Q 435 448 455 448 L 475 448 L 475 415 L 455 415 M 380 620 L 520 620 M 400 640 L 500 640 M 425 660 L 475 660"
-                fill="none" stroke="url(#chromeStroke)" stroke-width="1" opacity="0.2"/>
-
-            <!-- SINGLE animated trace: 14 subpaths, one laser head -->
-            <path id="traceMaster" class="laser-trace"
-                d="M 200 200 Q 200 180 220 180 L 680 180 Q 700 180 700 200 L 700 700 Q 700 720 680 720 L 220 720 Q 200 720 200 700 Z M 220 200 L 680 200 L 680 700 L 220 700 Z M 220 200 L 232 212 L 220 224 L 208 212 Z M 680 200 L 692 212 L 680 224 L 668 212 Z M 680 700 L 692 688 L 680 676 L 668 688 Z M 220 700 L 232 688 L 220 676 L 208 688 Z M 450 250 C 380 320 320 390 320 450 C 320 495 355 520 395 500 C 390 530 375 560 345 585 L 555 585 C 525 560 510 530 505 500 C 545 520 580 495 580 450 C 580 390 520 320 450 250 Z M 450 300 C 400 355 355 405 355 450 C 355 480 385 498 410 483 C 405 505 395 525 375 545 L 525 545 C 505 525 495 505 490 483 C 515 498 545 480 545 450 C 545 405 500 355 450 300 Z M 435 385 L 435 425 Q 435 448 455 448 L 475 448 L 475 415 L 455 415 M 380 620 L 520 620 M 400 640 L 500 640 M 425 660 L 475 660"
-                fill="none" stroke="#ffffff" stroke-width="2.4"
-                stroke-linecap="round" stroke-linejoin="round"
-                filter="url(#strongGlow)"
-                data-dur="12"/>
-
-            <!-- SINGLE LASER HEAD -->
-            <g class="laser-head" data-trace="traceMaster">
-                <circle r="58" fill="url(#glowOuter)" opacity="0.32"/>
-                <circle r="30" fill="url(#glowOuter)" opacity="0.75"/>
-                <circle r="15" fill="url(#glowInner)"/>
-                <circle r="4" fill="#ffffff"/>
-
-                <g class="sparks">
-                    <circle class="spark" r="1.9" fill="#ffffff" style="--dx:-24px; --dy:-15px; --delay:0s;"/>
-                    <circle class="spark" r="1.6" fill="#A8DEFF" style="--dx:28px; --dy:-11px; --delay:-0.08s;"/>
-                    <circle class="spark" r="1.7" fill="#ffffff" style="--dx:-15px; --dy:24px; --delay:-0.16s;"/>
-                    <circle class="spark" r="1.5" fill="#A8DEFF" style="--dx:19px; --dy:22px; --delay:-0.24s;"/>
-                    <circle class="spark" r="1.8" fill="#ffffff" style="--dx:-30px; --dy:9px; --delay:-0.32s;"/>
-                    <circle class="spark" r="1.4" fill="#ffffff" style="--dx:13px; --dy:-28px; --delay:-0.40s;"/>
-                    <circle class="spark" r="1.6" fill="#A8DEFF" style="--dx:-22px; --dy:-22px; --delay:-0.12s;"/>
-                    <circle class="spark" r="1.7" fill="#ffffff" style="--dx:26px; --dy:15px; --delay:-0.20s;"/>
-                    <circle class="spark" r="1.5" fill="#ffffff" style="--dx:-9px; --dy:-26px; --delay:-0.28s;"/>
-                    <circle class="spark" r="1.6" fill="#A8DEFF" style="--dx:22px; --dy:-20px; --delay:-0.36s;"/>
-                    <circle class="spark" r="1.4" fill="#ffffff" style="--dx:-26px; --dy:-7px; --delay:-0.44s;"/>
-                    <circle class="spark" r="1.5" fill="#A8DEFF" style="--dx:7px; --dy:26px; --delay:-0.04s;"/>
-                    <circle class="spark" r="1.6" fill="#ffffff" style="--dx:-20px; --dy:18px; --delay:-0.10s;"/>
-                    <circle class="spark" r="1.4" fill="#A8DEFF" style="--dx:18px; --dy:-24px; --delay:-0.22s;"/>
-                </g>
-
-                <circle class="flash" r="20" fill="url(#flashGrad)" opacity="0"/>
-                <circle class="flash-ring" r="20" fill="none" stroke="#ffffff" stroke-width="2" opacity="0"/>
-            </g>
-
-            <!-- Crosshairs -->
-            <g stroke="rgba(232,239,248,0.4)" stroke-width="1">
-                <line x1="180" y1="180" x2="220" y2="180"/>
-                <line x1="200" y1="160" x2="200" y2="200"/>
-                <line x1="680" y1="180" x2="720" y2="180"/>
-                <line x1="700" y1="160" x2="700" y2="200"/>
-                <line x1="180" y1="720" x2="220" y2="720"/>
-                <line x1="200" y1="700" x2="200" y2="740"/>
-                <line x1="680" y1="720" x2="720" y2="720"/>
-                <line x1="700" y1="700" x2="700" y2="740"/>
-            </g>
-
-            <!-- Dimension lines -->
-            <g stroke="rgba(232,239,248,0.3)" stroke-width="0.8" stroke-dasharray="3 3">
-                <line x1="200" y1="775" x2="700" y2="775"/>
-                <line x1="200" y1="768" x2="200" y2="782"/>
-                <line x1="700" y1="768" x2="700" y2="782"/>
-                <line x1="740" y1="180" x2="740" y2="720"/>
-                <line x1="733" y1="180" x2="747" y2="180"/>
-                <line x1="733" y1="720" x2="747" y2="720"/>
-            </g>
-            <text x="450" y="795" text-anchor="middle" font-family="monospace" font-size="11" fill="rgba(232,239,248,0.6)" letter-spacing="1">86.0 mm</text>
-            <text x="755" y="455" font-family="monospace" font-size="11" fill="rgba(232,239,248,0.6)" letter-spacing="1" transform="rotate(-90 755 455)">54.0 mm</text>
-        </svg>
-    </div>
-</section>
-
-<!-- ═══════════ GALERÍA ═══════════ -->
-<section id="trabajos">
-    <div class="section-head reveal">
-        <div>
-            <p class="eyebrow">// Catálogo</p>
-            <h2 class="section-title">PIEZAS <em>2026</em></h2>
-        </div>
-        <p class="section-desc">
-            Series activas del taller. Elegí el material y tocá una pieza para ver el detalle.
-        </p>
-    </div>
-    <div class="works-grid" id="worksGrid"></div>
-</section>
 
 <!-- ═══════════ CÓMO ENCARGAR ═══════════ -->
 <section id="pedido">
@@ -1615,23 +1392,28 @@
             El grabado es permanente: no se borra, no se despega, no se cae.
         </p>
     </div>
-    <div class="size-table-wrap reveal">
-        <table>
-            <thead>
-                <tr><th>Material</th><th>Espesor</th><th>Acabado</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Acero inoxidable</td><td>1,5 mm</td><td>Pulido espejo / mate</td></tr>
-                <tr><td>Aluminio</td><td>1,2 mm</td><td>Anodizado</td></tr>
-                <tr><td>Madera</td><td>3 mm</td><td>Natural / laqueado</td></tr>
-                <tr><td>Cuero</td><td>2 mm</td><td>Grabado profundo</td></tr>
-                <tr><td>Acrílico</td><td>3 mm</td><td>Cristal / esmerilado</td></tr>
-            </tbody>
-        </table>
+    <div class="materials-grid reveal">
+        <article class="material-card">
+            <span class="material-name">Acero inoxidable</span>
+            <span class="material-meta">1,5 mm</span>
+        </article>
+        <article class="material-card">
+            <span class="material-name">Aluminio</span>
+            <span class="material-meta">1,2 mm</span>
+        </article>
+        <article class="material-card">
+            <span class="material-name">Madera</span>
+            <span class="material-meta">3 mm</span>
+        </article>
+        <article class="material-card">
+            <span class="material-name">Cuero</span>
+            <span class="material-meta">2 mm</span>
+        </article>
+        <article class="material-card">
+            <span class="material-name">Acrílico</span>
+            <span class="material-meta">3 mm</span>
+        </article>
     </div>
-    <p class="size-note reveal">
-        Tolerancia de ±0,2 mm. Formatos de tarjeta disponibles: 8,6 × 5,4 cm (estándar) y 6,3 × 8,8 cm (jumbo).
-    </p>
 </section>
 
 <!-- ═══════════ FOOTER ═══════════ -->
@@ -1643,7 +1425,7 @@
                 <span class="admin-dot"></span>
             </button>
         </div>
-        <span>Damián / Grabado Láser</span>
+        <span>Damián Núñez / Grabado Láser</span>
     </div>
 </footer>
 
@@ -1699,7 +1481,7 @@
         <div class="admin-head">
             <div>
                 <h3>Administración</h3>
-                <small>Precio base, imágenes del proceso, piezas del catálogo.</small>
+                <small>Precio base y piezas del catálogo.</small>
             </div>
             <div class="admin-head-actions">
                 <button type="button" id="logoutBtn" class="btn-cancel">Salir</button>
@@ -1714,26 +1496,6 @@
                     <div class="admin-price-row">
                         <input type="number" id="priceInput" min="0" step="500" inputmode="numeric">
                         <button type="button" id="savePriceBtn" class="btn-save">Guardar</button>
-                    </div>
-                </div>
-                <div class="admin-flow-box">
-                    <label>Imágenes del proceso</label>
-                    <div class="admin-flow-grid">
-                        <label class="admin-flow-slot">
-                            <div class="admin-flow-thumb"><img id="flowThumbImg1" alt="Boceto" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></div>
-                            <span class="admin-flow-label">Boceto</span>
-                            <input type="file" id="flowFile1" accept="image/*" hidden>
-                        </label>
-                        <label class="admin-flow-slot">
-                            <div class="admin-flow-thumb"><img id="flowThumbImg2" alt="Grabado" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></div>
-                            <span class="admin-flow-label">Grabado</span>
-                            <input type="file" id="flowFile2" accept="image/*" hidden>
-                        </label>
-                        <label class="admin-flow-slot">
-                            <div class="admin-flow-thumb"><img id="flowThumbImg3" alt="Acabado" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></div>
-                            <span class="admin-flow-label">Acabado</span>
-                            <input type="file" id="flowFile3" accept="image/*" hidden>
-                        </label>
                     </div>
                 </div>
                 <h4 id="formTitle">Agregar pieza</h4>
@@ -1791,12 +1553,11 @@
 
     const SUPABASE_URL = "https://zzrmqidzfjqrmrictels.supabase.co";
     const SUPABASE_ANON_KEY = "sb_publishable_6b27IFeNHruaWcIO5mP_yg_lwn79eZ5";
-    const SUPABASE_TABLE = "milimars_content";
-    const SUPABASE_BUCKET = "milimars";
+    const SUPABASE_TABLE = "gambito_content";
+    const SUPABASE_BUCKET = "gambito";
 
     const LS_KEY = "gambito_works_v1";
     const PRICE_KEY = "gambito_price_v1";
-    const FLOW_KEY = "gambito_flow_v1";
     const SESSION_KEY = "gambito_admin_session";
     const DRAFT_KEY = "gambito_form_draft";
     const MAX_IMG_WIDTH = 900;
@@ -1816,32 +1577,26 @@
         const svg =
             '<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900">' +
                 '<defs>' +
-                    '<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a1d24"/><stop offset=".5" stop-color="#08090c"/><stop offset="1" stop-color="#1a1d24"/></linearGradient>' +
-                    '<linearGradient id="ch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".28" stop-color="#eef3f8"/><stop offset=".48" stop-color="#788499"/><stop offset=".56" stop-color="#ffffff"/><stop offset=".72" stop-color="#8d94a0"/><stop offset="1" stop-color="#eef3f8"/></linearGradient>' +
-                    '<radialGradient id="gl" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#A8DEFF" stop-opacity=".55"/><stop offset="1" stop-color="#A8DEFF" stop-opacity="0"/></radialGradient>' +
-                    '<radialGradient id="ru" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#4FA9E8" stop-opacity=".35"/><stop offset="1" stop-color="#4FA9E8" stop-opacity="0"/></radialGradient>' +
+                    '<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a1015"/><stop offset=".5" stop-color="#06070a"/><stop offset="1" stop-color="#1a1015"/></linearGradient>' +
+                    '<linearGradient id="ch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".28" stop-color="#f7f0ee"/><stop offset=".48" stop-color="#8a7a78"/><stop offset=".56" stop-color="#ffffff"/><stop offset=".72" stop-color="#9a8a88"/><stop offset="1" stop-color="#f7f0ee"/></linearGradient>' +
+                    '<radialGradient id="gl" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FF6B4A" stop-opacity=".55"/><stop offset="1" stop-color="#FF6B4A" stop-opacity="0"/></radialGradient>' +
+                    '<radialGradient id="ru" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FF3322" stop-opacity=".35"/><stop offset="1" stop-color="#FF3322" stop-opacity="0"/></radialGradient>' +
                     '<filter id="bl" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"/></filter>' +
                 '</defs>' +
                 '<rect width="900" height="900" fill="url(#bg)"/>' +
                 '<circle cx="450" cy="450" r="380" fill="url(#gl)" opacity=".5"/>' +
                 '<circle cx="120" cy="780" r="220" fill="url(#ru)" opacity=".5"/>' +
                 '<circle cx="800" cy="120" r="180" fill="url(#ru)" opacity=".35"/>' +
-                '<g stroke="#a8b0bd" stroke-opacity=".12" stroke-width="1">' + grid + '</g>' +
+                '<g stroke="#b8a8a8" stroke-opacity=".12" stroke-width="1">' + grid + '</g>' +
                 '<circle cx="450" cy="450" r="300" fill="none" stroke="url(#ch)" stroke-width="2.5" stroke-opacity=".5"/>' +
                 '<circle cx="450" cy="450" r="262" fill="none" stroke="#ffffff" stroke-opacity=".4" stroke-width="2" stroke-dasharray="4 12"/>' +
-                '<g transform="rotate(' + rot + ' 450 450)"><rect x="-120" y="440" width="1140" height="16" fill="#A8DEFF" opacity=".4" filter="url(#bl)"/><rect x="-120" y="446" width="1140" height="5" fill="#ffffff" opacity=".95"/></g>' +
+                '<g transform="rotate(' + rot + ' 450 450)"><rect x="-120" y="440" width="1140" height="16" fill="#FF6B4A" opacity=".4" filter="url(#bl)"/><rect x="-120" y="446" width="1140" height="5" fill="#ffffff" opacity=".95"/></g>' +
                 '<text x="450" y="' + (size > 200 ? 530 : 505) + '" text-anchor="middle" font-family="Impact, Haettenschweiler, \'Arial Black\', sans-serif" font-size="' + size + '" fill="url(#ch)" letter-spacing="8">' + title + '</text>' +
                 '<text x="450" y="642" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="24" letter-spacing="12" fill="#ffffff" opacity=".9">' + sub + '</text>' +
-                '<text x="450" y="812" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" letter-spacing="11" fill="#a8b0bd" opacity=".7">GAMBITO LÁSER</text>' +
+                '<text x="450" y="812" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="17" letter-spacing="11" fill="#b8a8a8" opacity=".7">GAMBITO LÁSER</text>' +
             '</svg>';
         return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
     }
-
-    const DEFAULT_FLOW = [
-        svgArt({ title: "01", sub: "BOCETO", rot: -12 }),
-        svgArt({ title: "02", sub: "GRABADO", rot: 14 }),
-        svgArt({ title: "03", sub: "ACABADO", rot: -22 })
-    ];
 
     const DEFAULT_WORKS = [
         { id: "g1", title: "As de Espadas", desc: "Acero inoxidable · Grabado profundo · 8,6 × 5,4 cm", tag: "NEW", img: svgArt({ title: "A", sub: "ACERO INOX", rot: -18 }) },
@@ -1863,7 +1618,6 @@
 
     let works = [];
     let price = DEFAULT_PRICE;
-    let flowImages = DEFAULT_FLOW.slice();
     let selectedVars = {};
     let editingId = null;
     let currentImageData = "";
@@ -1938,30 +1692,6 @@
         catch (err) { adminStatus("No se pudo guardar el precio", "error"); return false; }
     }
 
-    async function loadFlow() {
-        if (sb) {
-            try {
-                const { data, error } = await sb.from(SUPABASE_TABLE).select("value").eq("key", "gambito_flow").maybeSingle();
-                if (error) throw error;
-                if (data && Array.isArray(data.value) && data.value.length === 3) return data.value;
-                const seed = DEFAULT_FLOW.slice();
-                await sb.from(SUPABASE_TABLE).upsert({ key: "gambito_flow", value: seed });
-                return seed;
-            } catch (err) { console.warn("Supabase loadFlow failed → localStorage", err); }
-        }
-        try { const raw = localStorage.getItem(FLOW_KEY); if (raw) { const parsed = JSON.parse(raw); if (Array.isArray(parsed) && parsed.length === 3) return parsed; } } catch (err) { /* ignorar */ }
-        return DEFAULT_FLOW.slice();
-    }
-
-    async function persistFlow() {
-        if (sb) {
-            try { const { error } = await sb.from(SUPABASE_TABLE).upsert({ key: "gambito_flow", value: flowImages }); if (error) throw error; return true; }
-            catch (err) { adminStatus("Error guardando proceso: " + (err.message || err), "error"); return false; }
-        }
-        try { localStorage.setItem(FLOW_KEY, JSON.stringify(flowImages)); return true; }
-        catch (err) { adminStatus("No se pudo guardar el proceso", "error"); return false; }
-    }
-
     async function uploadImageIfNeeded(dataUrl) {
         if (!sb || !SUPABASE_BUCKET || !dataUrl || !dataUrl.startsWith("data:")) return dataUrl;
         const res = await fetch(dataUrl);
@@ -2020,24 +1750,6 @@
         });
     }
 
-    function applyFlowImages() { const a = $("flowImg1"), b = $("flowImg2"), c = $("flowImg3"); if (a) a.src = flowImages[0] || ""; if (b) b.src = flowImages[1] || ""; if (c) c.src = flowImages[2] || ""; }
-    function renderFlowAdmin() { [0, 1, 2].forEach(function (i) { const img = $("flowThumbImg" + (i + 1)); if (img) img.src = flowImages[i] || ""; }); }
-
-    async function handleFlowFileChange(index, file) {
-        if (!file) return;
-        adminStatus("Procesando imagen…", "info");
-        try {
-            let dataURL = await compressImage(file);
-            if (sb && SUPABASE_BUCKET) dataURL = await uploadImageIfNeeded(dataURL);
-            const snapshot = flowImages.slice();
-            flowImages[index] = dataURL;
-            const ok = await persistFlow();
-            if (!ok) { flowImages = snapshot; return; }
-            renderFlowAdmin(); applyFlowImages();
-            adminStatus("Imagen actualizada", "success");
-        } catch (err) { adminStatus(err && err.message ? err.message : "No se pudo procesar", "error"); }
-    }
-
     function openLightbox(id) {
         const work = works.filter(function (w) { return String(w.id) === String(id); })[0];
         if (!work) return;
@@ -2068,7 +1780,7 @@
     function showPanel() {
         $("loginCard").style.display = "none";
         $("adminPanel").style.display = "";
-        renderAdminList(); updatePriceInput(); renderFlowAdmin();
+        renderAdminList(); updatePriceInput();
         const draft = loadFormDraft();
         if (draft && (draft.title || draft.desc || draft.tag || draft.img)) restoreDraft(draft); else resetForm();
     }
@@ -2305,97 +2017,6 @@
         els.forEach(function (el) { io.observe(el); });
     }
 
-    /* ═══════════ SINGLE-SOURCE LASER ENGRAVING ═══════════ */
-    function initCNC() {
-        const NS = 'http://www.w3.org/2000/svg';
-        const XLINK = 'http://www.w3.org/1999/xlink';
-
-        // 1. Measure total path length
-        const trace = document.getElementById('traceMaster');
-        if (!trace) return;
-        let len = 0;
-        try { len = Math.ceil(trace.getTotalLength()); } catch (e) { len = 6000; }
-        if (!len || len < 1) len = 6000;
-
-        const dur = parseFloat(trace.dataset.dur || '12');
-
-        // 2. Set up stroke-dashoffset drawing
-        trace.style.strokeDasharray = len;
-        trace.style.strokeDashoffset = len;
-
-        const dashAnim = document.createElementNS(NS, 'animate');
-        dashAnim.setAttribute('attributeName', 'stroke-dashoffset');
-        dashAnim.setAttribute('values', len + '; 0; 0');
-        dashAnim.setAttribute('keyTimes', '0; 0.85; 1');
-        dashAnim.setAttribute('dur', dur + 's');
-        dashAnim.setAttribute('begin', '0s');
-        dashAnim.setAttribute('repeatCount', 'indefinite');
-        dashAnim.setAttribute('calcMode', 'linear');
-        trace.appendChild(dashAnim);
-
-        // 3. Set up single laser head to follow the exact same path
-        const head = document.querySelector('.laser-head[data-trace="traceMaster"]');
-        if (!head) return;
-
-        const motion = document.createElementNS(NS, 'animateMotion');
-        motion.setAttribute('dur', dur + 's');
-        motion.setAttribute('begin', '0s');
-        motion.setAttribute('repeatCount', 'indefinite');
-        motion.setAttribute('keyPoints', '0; 1; 1');
-        motion.setAttribute('keyTimes', '0; 0.85; 1');
-        motion.setAttribute('calcMode', 'linear');
-
-        const mpath = document.createElementNS(NS, 'mpath');
-        mpath.setAttributeNS(XLINK, 'xlink:href', '#traceMaster');
-        mpath.setAttribute('href', '#traceMaster');
-        motion.appendChild(mpath);
-        head.insertBefore(motion, head.firstChild);
-
-        // 4. Flash pulse at trace completion (85-98%)
-        const flash = head.querySelector('.flash');
-        if (flash) {
-            const opAnim = document.createElementNS(NS, 'animate');
-            opAnim.setAttribute('attributeName', 'opacity');
-            opAnim.setAttribute('values', '0; 0; 1; 0.85; 0.4; 0');
-            opAnim.setAttribute('keyTimes', '0; 0.72; 0.82; 0.88; 0.94; 1');
-            opAnim.setAttribute('dur', dur + 's');
-            opAnim.setAttribute('begin', '0s');
-            opAnim.setAttribute('repeatCount', 'indefinite');
-            flash.appendChild(opAnim);
-
-            const rAnim = document.createElementNS(NS, 'animate');
-            rAnim.setAttribute('attributeName', 'r');
-            rAnim.setAttribute('values', '20; 20; 55; 85; 115; 130');
-            rAnim.setAttribute('keyTimes', '0; 0.72; 0.82; 0.88; 0.94; 1');
-            rAnim.setAttribute('dur', dur + 's');
-            rAnim.setAttribute('begin', '0s');
-            rAnim.setAttribute('repeatCount', 'indefinite');
-            flash.appendChild(rAnim);
-        }
-
-        // 5. Expanding shockwave ring
-        const ring = head.querySelector('.flash-ring');
-        if (ring) {
-            const ringOp = document.createElementNS(NS, 'animate');
-            ringOp.setAttribute('attributeName', 'opacity');
-            ringOp.setAttribute('values', '0; 0; 1; 0.5; 0');
-            ringOp.setAttribute('keyTimes', '0; 0.74; 0.82; 0.92; 1');
-            ringOp.setAttribute('dur', dur + 's');
-            ringOp.setAttribute('begin', '0s');
-            ringOp.setAttribute('repeatCount', 'indefinite');
-            ring.appendChild(ringOp);
-
-            const ringR = document.createElementNS(NS, 'animate');
-            ringR.setAttribute('attributeName', 'r');
-            ringR.setAttribute('values', '20; 20; 65; 110; 150');
-            ringR.setAttribute('keyTimes', '0; 0.74; 0.82; 0.92; 1');
-            ringR.setAttribute('dur', dur + 's');
-            ringR.setAttribute('begin', '0s');
-            ringR.setAttribute('repeatCount', 'indefinite');
-            ring.appendChild(ringR);
-        }
-    }
-
     function bindEvents() {
         $("year").textContent = new Date().getFullYear();
         $("lbClose").addEventListener("click", closeLightbox);
@@ -2410,15 +2031,6 @@
         $("cancelEditBtn").addEventListener("click", resetForm);
         $("savePriceBtn").addEventListener("click", savePrice);
         $("priceInput").addEventListener("keydown", function (ev) { if (ev.key === "Enter") { ev.preventDefault(); savePrice(); } });
-        [1, 2, 3].forEach(function (n, i) {
-            const input = $("flowFile" + n);
-            if (!input) return;
-            input.addEventListener("change", function (ev) {
-                const file = ev.target.files && ev.target.files[0];
-                handleFlowFileChange(i, file);
-                ev.target.value = "";
-            });
-        });
         $("confirmCancelBtn").addEventListener("click", function () { closeConfirm(false); });
         $("confirmDeleteBtn").addEventListener("click", function () { closeConfirm(true); });
         $("confirmOverlay").addEventListener("click", function (ev) { if (ev.target === $("confirmOverlay")) closeConfirm(false); });
@@ -2437,15 +2049,11 @@
     async function init() {
         works = await loadWorks();
         price = await loadPrice();
-        flowImages = await loadFlow();
         works.forEach(function (w) { if (!selectedVars[w.id]) selectedVars[w.id] = "ACERO"; });
         bindEvents();
         renderWorks();
-        applyFlowImages();
-        renderFlowAdmin();
         initReveal();
         updatePriceInput();
-        initCNC();
         if (isLoggedIn()) renderAdminList();
     }
 
@@ -2454,7 +2062,7 @@
 </script>
 
 <script>
-/* Chispas ambiente (fondo) */
+/* Chispas ambiente (fondo) — red laser palette */
 (function () {
   'use strict';
   var canvas = document.getElementById('mm-fx-particles');
@@ -2462,7 +2070,7 @@
   var ctx = canvas.getContext('2d');
   var W = 0, H = 0;
   var sparks = [];
-  var COLOR = '168, 222, 255';
+  var COLOR = '255, 100, 60';
 
   function seed() {
     var count = Math.min(60, Math.round((W * H) / 34000));
@@ -2536,7 +2144,7 @@
     document.addEventListener('mouseover', function (e) {
         var t = e.target;
         if (!t || typeof t.closest !== 'function') return;
-        var hot = t.closest('a, button, .work-card, .social-icon, .step, .flow-step, .admin-item, .var-btn');
+        var hot = t.closest('a, button, .work-card, .social-icon, .step, .material-card, .admin-item, .var-btn');
         cursor.classList.toggle('is-hot', !!hot);
     });
     function animate() {
