@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Damián Nuñez — GAMBITO LÁSER</title>
-<meta name="description" content="GAMBITO LÁSER — Grabado láser CNC, tarjetas de colección y trabajos personalizados. Venado Tuerto, Santa Fe.">
+<meta name="description" content="GAMBITO LÁSER — Grabado láser CNC, tarjetas de colección y trabajos personalizados.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23040507'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial' font-size='36' font-weight='900' text-anchor='middle' fill='%23ff6b4a'%3EG%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,14 +75,15 @@
     ::selection { background: var(--accent); color: #000; }
 
     /* ═══════════ HERO — BRAND + LASER REVEAL ═══════════ */
-    .hero {
+        .hero {
         position: relative;
         min-height: 100dvh;
-        padding: clamp(28px, 4.5vw, 54px) clamp(20px, 5vw, 60px) clamp(40px, 6vw, 70px);
+        padding: clamp(16px, 2.5vw, 32px) clamp(20px, 5vw, 60px) clamp(20px, 3vw, 40px);
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        gap: clamp(4px, 1.2vw, 14px);
         text-align: center;
         background:
             repeating-linear-gradient(95deg,
@@ -111,7 +112,7 @@
     .brand-mark {
         position: relative;
         z-index: 2;
-        margin-bottom: clamp(20px, 3.2vw, 36px);
+              margin-bottom: 0;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -156,15 +157,15 @@
         50%      { background-position: 0 44%; }
     }
 
-        .hero-laser {
+           .hero-laser {
         position: relative;
         z-index: 2;
-        width: min(80vw, 62vh);
-        max-width: 720px;
+        width: min(78vw, 55vh);
+        max-width: 640px;
         height: auto;
         display: block;
         filter: drop-shadow(0 0 90px rgba(255, 80, 40, 0.22));
-        transform: scale(1.25);
+        transform: scale(1.18);
         transform-origin: center center;
     }
     /* ═══════════ SECTION HEADS ═══════════ */
@@ -555,19 +556,22 @@
         content-visibility: auto;
         contain-intrinsic-size: 1px 800px;
     }
-    .materials-grid {
+       .materials-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: clamp(12px, 1.8vw, 18px);
+        max-width: min(100%, 800px);
+        margin-inline: auto;
     }
-    .material-card {
+      .material-card {
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         gap: 20px;
-        min-height: clamp(140px, 16vw, 180px);
-        padding: clamp(22px, 2.8vw, 32px);
+        aspect-ratio: 1 / 1;
+        min-height: 0;
+        padding: clamp(16px, 2.4vw, 28px);
         border: 1px solid var(--border);
         border-radius: var(--radius-lg);
         background:
@@ -986,9 +990,15 @@
     @media (max-width: 780px) {
         .admin-grid { grid-template-columns: 1fr; }
     }
-    @media (max-width: 720px) {
+      @media (max-width: 720px) {
         .section-desc { text-align: left; }
-        .hero-laser { width: min(88vw, 50vh); }
+        .hero {
+            min-height: auto;
+            padding-top: clamp(10px, 2vw, 18px);
+            padding-bottom: clamp(12px, 2.5vw, 20px);
+            gap: clamp(2px, 0.8vw, 8px);
+        }
+        .hero-laser { width: min(88vw, 48vh); transform: scale(1.12); }
     }
     @media (max-width: 640px) {
         .footer-inner { flex-direction: column; align-items: flex-start; }
@@ -1014,13 +1024,13 @@
         .form-actions button { width: 100%; }
         .upload-btn { padding: 12px; font-size: 0.55rem; }
         #wFileStatus { font-size: 0.55rem; }
-        .materials-grid { grid-template-columns: 1fr 1fr; }
+              
     }
     @media (max-width: 400px) {
         .admin-panel { padding: 16px; }
         .admin-form-card { padding: 14px; }
         .admin-thumb { width: 44px; height: 44px; }
-        .materials-grid { grid-template-columns: 1fr; }
+   
     }
 
     /* ═══════════ AMBIENT FX ═══════════ */
@@ -1129,10 +1139,10 @@
 <div class="mm-cursor" id="mm-cursor" aria-hidden="true"></div>
 
 <!-- ═══════════ HERO — BRAND + LASER REVEAL ═══════════ -->
-<section class="hero" aria-label="Damián Núñez — GAMBITO LÁSER">
+<section class="hero" aria-label="Damián Nuñez — GAMBITO LÁSER">
 
     <div class="brand-mark">
-        <span class="brand-name">Damián Núñez</span>
+        <span class="brand-name">Damián Nuñez</span>
     </div>
 
     <svg class="hero-laser" viewBox="0 0 900 900" aria-hidden="true">
@@ -1359,7 +1369,7 @@
     <p class="works-lead reveal">
         <strong>GRABAMOS</strong> con luz: el láser quema el trazo y lo deja marcado
         para siempre en el metal, la madera o el cuero. Piezas de colección, placas
-        y encargos personalizados, hechos uno por uno. <em></em>.
+        y encargos personalizados, hechos uno por uno. <em></em>
     </p>
 
     <div class="section-head reveal">
@@ -1382,14 +1392,12 @@
             <span>Tarjetas de colección</span>
             <span>Trabajos personalizados</span>
             <span>Acero · Madera · Cuero</span>
-            <span>Venado Tuerto · Santa Fe</span>
         </div>
         <div class="marquee-content">
             <span>Grabado láser CNC</span>
             <span>Tarjetas de colección</span>
             <span>Trabajos personalizados</span>
             <span>Acero · Madera · Cuero</span>
-            <span>Venado Tuerto · Santa Fe</span>
         </div>
     </div>
 </div>
@@ -1456,10 +1464,6 @@
             <span class="material-name">Cuero</span>
             <span class="material-meta">2 mm</span>
         </article>
-        <article class="material-card">
-            <span class="material-name">Acrílico</span>
-            <span class="material-meta">3 mm</span>
-        </article>
     </div>
 </section>
 
@@ -1467,12 +1471,12 @@
 <footer class="site-footer">
     <div class="footer-inner">
         <div class="footer-left">
-            <span>© <span id="year">2026</span> GAMBITO LÁSER · Venado Tuerto · Santa Fe</span>
+            <span>© <span id="year">2026</span> GAMBITO LÁSER</span>
             <button type="button" class="admin-trigger" id="adminTrigger" aria-label="Abrir panel de administración" title="Panel">
                 <span class="admin-dot"></span>
             </button>
         </div>
-        <span>Damián Núñez / Grabado Láser</span>
+        <span>Damián Nuñez / Grabado Láser</span>
     </div>
 </footer>
 
@@ -2238,14 +2242,22 @@
     }, { threshold: 0.05 }).observe(svg);
   }
 
-  // En mobile: correr 1 ciclo y frenar en un frame bonito (logo revelado, sin chispas infinitas)
-   if (isMobile) {
+    // En mobile: revelar UNA vez y quedar limpio (sin fade-out ni flicker)
+  if (isMobile) {
     setTimeout(function () {
-    try { svg.setCurrentTime(4.69); } catch (e) {}
-      if (svg.pauseAnimations) svg.pauseAnimations();
-      // En mobile queda congelado para siempre (no reanimar al volver)
+      try { svg.pauseAnimations(); svg.setCurrentTime(4.69); } catch (e) {}
       svg.__mmFrozen = true;
-    }, 5200);
+      // Forzar estado visual final — evita que el SMIL resetee y muestre el fade
+      var maskedGroup = svg.querySelector('g[mask]');
+      if (maskedGroup) {
+        maskedGroup.removeAttribute('mask');   // logo completo visible
+        maskedGroup.style.opacity = '1';       // opacidad forzada
+      }
+      // Ocultar láser head y línea de borde
+      svg.querySelectorAll('g[filter]').forEach(function (g) {
+        g.style.opacity = '0';
+      });
+    }, 4700);
   }
 })();
 </script>
