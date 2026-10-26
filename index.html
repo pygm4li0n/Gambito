@@ -118,7 +118,7 @@
         flex-direction: column;
         align-items: center;
     }
-        .brand-name {
+            .brand-name {
         display: inline-block;
         font-family: 'Bebas Neue', sans-serif;
         font-size: clamp(1.12rem, 3.6vw, 3.36rem);
@@ -126,16 +126,11 @@
         letter-spacing: 0.25em;
         padding-left: 0.25em;
         font-weight: 400;
-        background: var(--chrome-grad);
-        background-size: 100% 240%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: var(--white);
         filter:
             drop-shadow(0 0 28px rgba(255, 110, 70, 0.55))
             drop-shadow(0 0 60px rgba(255, 80, 40, 0.28))
             drop-shadow(0 14px 24px rgba(0, 0, 0, 0.9));
-        animation: chromeShift 8s ease-in-out infinite;
     }
     .brand-mark::after {
         content: "";
@@ -1098,17 +1093,10 @@
         .brand-mark::after,
         .site-footer::before { animation: none !important; }
 
-              /* 2) Reemplazar drop-shadow triple por uno barato */
+                      /* 2) Reemplazar drop-shadow triple por uno barato */
         .brand-name {
             filter: drop-shadow(0 0 16px rgba(255,110,70,0.55))
                     drop-shadow(0 4px 10px rgba(0,0,0,0.85));
-            /* FALLBACK MOBILE: elimina background-clip para asegurar tildes/ñ visibles */
-            background: none !important;
-            -webkit-background-clip: initial !important;
-            background-clip: initial !important;
-            -webkit-text-fill-color: var(--white) !important;
-            color: var(--white) !important;
-            animation: none !important;
         }
         .section-title,
         .works-lead strong,
