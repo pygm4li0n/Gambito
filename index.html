@@ -440,7 +440,9 @@
         animation: marqueeScroll 46s linear infinite;
         will-change: transform;
     }
-    .marquee:hover .marquee-track { animation-play-state: paused; }
+        @media (hover: hover) and (pointer: fine) {
+        .marquee:hover .marquee-track { animation-play-state: paused; }
+    }
     @keyframes marqueeScroll {
         from { transform: translate3d(0, 0, 0); }
         to   { transform: translate3d(-50%, 0, 0); }
@@ -1135,12 +1137,16 @@
         }
     }
 
-    /* Respeto global a reduced-motion */
+       /* Respeto global a reduced-motion */
     @media (prefers-reduced-motion: reduce) {
-        .brand-name, .section-title, .marquee-track, .brand-mark::after,
+        .brand-name, .section-title, .brand-mark::after,
         .work-card, .step, .material-card, .social-icon {
             animation: none !important;
             transition: none !important;
+        }
+        /* La marquee mantiene velocidad normal incluso con reduced-motion */
+        .marquee-track {
+            animation-duration: 46s !important;
         }
     }
 </style>
